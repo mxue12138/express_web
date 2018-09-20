@@ -1,0 +1,87 @@
+.header {
+  width: 100%;
+  position: fixed;
+  background-color: #fff;
+  z-index: 99;
+  border-bottom: 3px solid green;
+  height: 80px;
+}
+.header .container {
+  position: relative;
+  display: flex;
+  align-items: center;
+  height: 100%;
+}
+.header .logo {
+  margin: auto 0;
+  font-size: 0;
+  background-color: #fff;
+  width: 220px;
+  height: 40px;
+}
+.header .nav li {
+  font-size: 0;
+  position: relative;
+  font-weight: bold;
+  margin-left: 50px;
+  float: left;
+}
+.header .nav li a {
+  font-size: 16px;
+}
+.header .nav li span {
+  position: absolute;
+  left: 0;
+  bottom: -4px;
+  width: 0;
+  height: 1px;
+  transition: width 0.3s;
+  background: blue;
+}
+.header .nav li:hover span {
+  width: 100%;
+}
+.header .nav li.active span {
+  width: 100%;
+}
+.header .search {
+  padding: 6px;
+  padding-right: 30px;
+  border: 1px solid #333;
+  border-radius: 5px;
+  position: absolute;
+  right: 0;
+}
+.header .search input {
+  width: 200px;
+  height: 20px;
+}
+.header .search i {
+  cursor: pointer;
+  width: 20px;
+  height: 20px;
+  right: 4px;
+  top: 0;
+  bottom: 0;
+  margin: auto 0;
+  position: absolute;
+}
+.header_content {
+  height: 83px;
+}
+.banner {
+  width: 100%;
+}
+.banner .swiper-pagination-bullet {
+  border-radius: 4px;
+  background-color: #B3B3B3;
+  width: 30px;
+  height: 4px;
+}
+.banner .swiper-slide {
+  display: flex;
+  justify-content: center;
+}
+.banner .swiper-pagination-bullet-active {
+  background-color: #4D4D4D;
+}

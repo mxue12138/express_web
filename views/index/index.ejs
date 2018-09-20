@@ -1,9 +1,29 @@
 <!DOCTYPE html>
-<html>
-  <head>
-    <title>aaa</title>
-  </head>
-  <body>
-    <h1>aaaa</h1>
-  </body>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <title>home首页</title>
+  <link rel="stylesheet" href="/plugin/normalize.css">
+  <link rel="stylesheet" href="/css/common/reset.css">
+  <link rel="stylesheet" href="/css/index/index.css">
+  <link rel="stylesheet" href="//at.alicdn.com/t/font_847183_zkr9rivaov.css">
+  <link rel="stylesheet" href="/plugin/swiper-4.4.1/css/swiper.min.css">
+  <script src="https://cdn.bootcss.com/jquery/3.3.1/jquery.min.js"></script>
+  <script src="/plugin/swiper-4.4.1/js/swiper.min.js"></script>
+  <script src="/js/index/index.js"></script>
+</head>
+<body>
+  <%- include('./common/header'); %>
+  <div class="swiper-container banner">
+    <div class="swiper-wrapper">
+      <div class="swiper-slide"><a href="/"><img src="/img/banner.jpg" alt="banner"></a></div>
+      <div class="swiper-slide"><a href="/"><img src="/img/banner.jpg" alt="banner"></a></div>
+      <div class="swiper-slide"><a href="/"><img src="/img/banner.jpg" alt="banner"></a></div>
+      <div class="swiper-slide"><a href="/"><img src="/img/banner.jpg" alt="banner"></a></div>
+    </div>
+    <div class="swiper-pagination"></div>
+    <div class="swiper-button-next"></div>
+    <div class="swiper-button-prev"></div>
+  </div>
+</body>
 </html>
