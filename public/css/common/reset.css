@@ -9,7 +9,7 @@ a {
 span {
   display: inline-block;
 }
-input {
+input, button {
   padding: 0;
   outline: none;
   border: none;
@@ -20,10 +20,15 @@ ul {
   padding: 0;
 }
 img {
+  width: 100%;
   display: block;
 }
 .container {
   margin: 0 auto;
   width: 1200px;
   height: 100%;
+}
+.clearfix{
+  overflow:auto;
+  _height:1%;
 }

@@ -2,7 +2,7 @@
 <html lang="zh-CN">
 <head>
   <meta charset="UTF-8">
-  <title>home首页</title>
+  <title><%= title %></title>
   <link rel="stylesheet" href="https://cdn.bootcss.com/normalize/8.0.0/normalize.min.css">
   <link rel="stylesheet" href="/css/common/reset.css">
   <link rel="stylesheet" href="/css/index/index.css">
@@ -13,14 +13,41 @@
   <%- include('./common/header'); %>
   <div class="swiper-container banner">
     <div class="swiper-wrapper">
-      <div class="swiper-slide"><a href="/"><img src="/img/banner.jpg" alt="banner"></a></div>
-      <div class="swiper-slide"><a href="/"><img src="/img/banner.jpg" alt="banner"></a></div>
-      <div class="swiper-slide"><a href="/"><img src="/img/banner.jpg" alt="banner"></a></div>
-      <div class="swiper-slide"><a href="/"><img src="/img/banner.jpg" alt="banner"></a></div>
+      <% for (var i = 0; i < shop.length; i++) { %>
+      <div class="swiper-slide"><a href="<%= shop[i].link %>"><img src="<%= shop[i].img %>" alt="<%= shop[i].title %>"></a></div>
+      <% } %>
     </div>
     <div class="swiper-pagination"></div>
     <div class="swiper-button-next"></div>
     <div class="swiper-button-prev"></div>
+  </div>
+  <ul class="products_slide container">
+    <% for (var i = 0; i < 8; i++) { %>
+    <li>
+      <a href="">
+        <img src="https://www.choetech.com/file/upload/201801/08/150616451.png" alt="iphoneX">
+        <p>iphoneX</p>
+      </a>
+    </li>
+    <% } %>
+  </ul>
+  <div class="products_list container">
+    <h2>商品展示
+      <small>小描述</small>
+    </h2>
+    <ul>
+      <% for (var i = 0; i < 4; i++) { %>
+      <li>
+        <a href="">
+          <img src="https://www.choetech.com/file/upload/201809/10/102609941.jpg.middle.jpg" alt="">
+          <p>CHOETECH 2-in-1 Wireless Charger Power Bank 10000mAh</p>
+        </a>
+      </li>
+      <% } %>
+    </ul>
+    <div class="more">
+      <a href="/">按钮</a>
+    </div>
   </div>
   <script src="https://cdn.bootcss.com/jquery/3.3.1/jquery.min.js"></script>
   <script src="https://cdn.bootcss.com/Swiper/4.3.0/js/swiper.min.js"></script>
