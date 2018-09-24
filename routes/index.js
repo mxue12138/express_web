@@ -4,8 +4,7 @@ var getShopData = require('../tools/data/getData')('shop');
 
 router.get(['/', '/index.html'], function(req, res) {
   res.render('index/index', {
-    title: '首页',
-    shop: getShopData
+    title: '首页'
   });
 });
 

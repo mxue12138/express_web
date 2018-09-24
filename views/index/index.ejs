@@ -10,17 +10,26 @@
   <link rel="stylesheet" href="https://cdn.bootcss.com/Swiper/4.3.0/css/swiper.min.css">
 </head>
 <body>
+  <!-- header头部 start -->
   <%- include('./common/header'); %>
+  <!-- header头部 end -->
+  <!-- banner轮播图 start -->
   <div class="swiper-container banner">
     <div class="swiper-wrapper">
-      <% for (var i = 0; i < shop.length; i++) { %>
-      <div class="swiper-slide"><a href="<%= shop[i].link %>"><img src="<%= shop[i].img %>" alt="<%= shop[i].title %>"></a></div>
+      <% for (var i = 0; i < 4; i++) { %>
+      <div class="swiper-slide">
+        <a href="/">
+          <img src="https://www.choetech.com/file/upload/201707/07/142953731.jpg" alt="">
+        </a>
+      </div>
       <% } %>
     </div>
     <div class="swiper-pagination"></div>
     <div class="swiper-button-next"></div>
     <div class="swiper-button-prev"></div>
   </div>
+  <!-- banner轮播图 end -->
+  <!-- products_slide商品小图 start -->
   <ul class="products_slide container">
     <% for (var i = 0; i < 8; i++) { %>
     <li>
@@ -31,8 +40,29 @@
     </li>
     <% } %>
   </ul>
+  <!-- products_slide商品小图 end -->
+  <!-- products_map商品大图 start -->
+  <ul class="products_map clearfix">
+    <% for (var i = 0; i < 4; i++) { %>
+    <li>
+      <a href="/">
+        <div class="text">
+          <h3>
+            Power
+            <small>Power introduce</small>
+          </h3>
+          <button class="shop">Shop now</button>
+        </div>
+        <img src="https://www.choetech.com/file/upload/201707/07/154208171.jpg" alt="">
+      </a>
+    </li>
+    <% } %>
+  </ul>
+  <!-- products_map商品大图 end -->
+  <!-- products_list商品四格列表 start -->
   <div class="products_list container">
-    <h2>商品展示
+    <h2>
+      商品展示
       <small>小描述</small>
     </h2>
     <ul>
@@ -49,6 +79,7 @@
       <a href="/">按钮</a>
     </div>
   </div>
+  <!-- products_list商品四格列表 end -->
   <script src="https://cdn.bootcss.com/jquery/3.3.1/jquery.min.js"></script>
   <script src="https://cdn.bootcss.com/Swiper/4.3.0/js/swiper.min.js"></script>
   <script src="/js/index/index.js"></script>

@@ -17,7 +17,6 @@
   font-size: 0;
   background-color: #fff;
   width: 220px;
-  height: 40px;
 }
 .header .nav li {
   font-size: 0;
@@ -81,11 +80,8 @@
   width: 30px;
   height: 4px;
 }
-.banner .swiper-pagination-bullet-active {
-  background-color: #4D4D4D;
-}
 .products_slide {
-  margin-top: 10px;
+  margin: 10px auto;
   display: flex;
   justify-content: space-around;
   height: 150px;
@@ -110,6 +106,82 @@
   margin: 0 auto;
   width: 60px;
   height: 60px;
+}
+.products_map {
+  background-color: #F5F5F5;
+  padding-top: 10px;
+  border-top: 1px solid #ddd;
+}
+.products_map li {
+  box-sizing: border-box;
+  padding: 0 5px;
+  float: left;
+  width: 50%;
+  height: 250px;
+  margin-bottom: 10px;
+}
+.products_map li a {
+  overflow: hidden;
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+.products_map li a:hover .text {
+  background-color: rgba(0,0,0,0.7);
+}
+.products_map li a:hover .shop {
+  margin-top: 15px;
+  opacity: 1;
+}
+.products_map li a:hover img {
+  transform: scale(1.1);
+}
+.products_map li .text {
+  transition: all 0.6s;
+  position: absolute;
+  padding: 40px 30px;
+  height: 100%;
+  width: 100%;
+  background-color: transparent;
+  z-index: 1;
+}
+.products_map li .shop {
+  cursor: pointer;
+  font-size: 14px;
+  color: #fff;
+  border: 1px solid #fff;
+  border-radius: 4px;
+  margin-top: 30px;
+  transition: all 0.6s;
+  opacity: 0;
+  width: 100px;
+  height: 30px;
+}
+.products_map li .shop:hover {
+  color: #333;
+  background-color: #fff;
+}
+.products_map li h3 {
+  color: #fff;
+  font-size: 32px;
+  font-weight: bold;
+  padding: 0;
+  margin: 0;
+  position: relative;
+}
+.products_map li small {
+  font-weight: normal;
+  font-size: 14px;
+  display: block;
+  margin-top: 10px;
+}
+.products_map li img {
+  transition: all 0.6s;
+  position: absolute;
+  left: 0;
+  top: 0;
+  height: 100%;
+  width: 100%;
 }
 .products_list h2 {
   text-align: center;

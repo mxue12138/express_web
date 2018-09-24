@@ -10,6 +10,7 @@ span {
   display: inline-block;
 }
 input, button {
+  background-color: transparent;
   padding: 0;
   outline: none;
   border: none;
@@ -20,6 +21,7 @@ ul {
   padding: 0;
 }
 img {
+  vertical-align: bottom;
   width: 100%;
   display: block;
 }
