@@ -1,9 +1,100 @@
 <!DOCTYPE html>
-<html>
-  <head>
-    <title>aaa</title>
-  </head>
-  <body>
-    <h1>aaaa</h1>
-  </body>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <title><%= title %></title>
+  <link rel="stylesheet" href="https://cdn.bootcss.com/normalize/8.0.0/normalize.min.css">
+  <link rel="stylesheet" href="/css/common/reset.css">
+  <style>
+    body {
+      background-color: #f5f5f5;
+    }
+    .header {
+      position: fixed;
+      height: 59px;
+      width: 100%;
+      top: 0;
+      left: 0;
+      background-color: #252a2f;
+      z-index: 9;
+      border-bottom: 1px solid hsla(0, 0%, 100%, 0.1);
+    }
+    .header h1 {
+      float: left;
+      padding-left: 30px;
+      line-height: 60px;
+      font-weight: normal;
+      font-size: 24px;
+      color: #fff;
+    }
+    .sidebar {
+      box-sizing: border-box;
+      padding-top: 60px;
+      width: 240px;
+      height: 100%;
+      position: fixed;
+      top: 0;
+      left: 0;
+      background-color: #252a2f;
+      z-index: 8;
+    }
+    .sidebar ul {
+      width: 100%;
+    }
+    .sidebar ul li:hover {
+      background-color: #192129;
+    }
+    .sidebar ul li {
+      color: #fff;
+      font-size: 16px;
+      font-weight: 100;
+      height: 50px;
+      line-height: 50px;
+    }
+    .sidebar ul li a {
+      box-sizing: border-box;
+      padding-left: 30px;
+      height: 100%;
+      width: 100%;
+    }
+    .content {
+      overflow: auto;
+      padding-top: 70px;
+      padding-left: 250px;
+      padding-bottom: 10px;
+      padding-right: 10px;
+      box-sizing: border-box;
+      background-color: #ddd;
+      position: fixed;
+      left: 0;
+      right: 0;
+      top: 0;
+      bottom: 0;
+      z-index: 7;
+    }
+  </style>
+</head>
+<body>
+  <!-- header头部 start -->
+  <div class="header">
+    <h1>网站管理后台</h1>
+  </div>
+  <!-- header头部 end -->
+  <!-- sidebar侧边栏 start -->
+  <div class="sidebar">
+    <ul>
+      <li><a href="/admin/index.html">管理后台首页</a></li>
+      <li><a href="/admin/webinfo.html">网站信息配置</a></li>
+      <li><a href="/admin/indexinfo.html">首页信息配置</a></li>
+      <li><a href="/admin/classify.html">商品分类管理</a></li>
+      <li><a href="/admin/goods.html">商品信息管理</a></li>
+    </ul>
+  </div>
+  <!-- sidebar侧边栏 end -->
+  <!-- content主体 start -->
+  <div class="content">
+    <%- include('./content/' + content); %>
+  </div>
+  <!-- content主体 end -->
+</body>
 </html>

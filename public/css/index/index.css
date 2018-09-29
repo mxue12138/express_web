@@ -133,6 +133,10 @@
   margin-top: 15px;
   opacity: 1;
 }
+.products_map li a img {
+  width: 100%;
+  height: auto;
+}
 .products_map li a:hover img {
   transform: scale(1.1);
 }
