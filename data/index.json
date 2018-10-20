@@ -1,13 +1,153 @@
 [
   {
+    "title": "首页",
+    "keywords": "",
+    "description": "",
     "banner": {
-
+      "count": "6",
+      "list": [
+        {
+          "img": "/img/index/banner_0.png",
+          "url": "/admin/index.html"
+        },
+        {
+          "img": "/img/index/banner_1.png",
+          "url": "/admin/index.html"
+        },
+        {
+          "img": "/img/index/banner_2.png",
+          "url": "/admin/index.html"
+        },
+        {
+          "img": "/img/index/banner_3.png",
+          "url": "/admin/index.html"
+        },
+        {
+          "img": "/img/index/banner_4.png",
+          "url": "/admin/index.html"
+        },
+        {
+          "img": "/img/index/banner_5.png",
+          "url": "/admin/index.html"
+        },
+        {
+          "img": "/img/index/banner_6.png",
+          "url": "/admin/index.html"
+        },
+        {
+          "img": "/img/index/banner_7.png",
+          "url": "/admin/index.html"
+        },
+        {
+          "img": "/img/index/banner_8.png",
+          "url": "/admin/index.html"
+        },
+        {
+          "img": "/img/index/banner_9.png",
+          "url": "/admin/index.html"
+        }
+      ]
     },
     "products_slide": {
-
+      "count": "8",
+      "list": [
+        {
+          "img": "/img/index/products_slide_1.png",
+          "url": "/admin/index.html",
+          "title": "iPhone X"
+        },
+        {
+          "img": "/img/index/products_slide_1.png",
+          "url": "/admin/index.html",
+          "title": "iPhone X"
+        },
+        {
+          "img": "/img/index/products_slide_1.png",
+          "url": "/admin/index.html",
+          "title": "iPhone X"
+        },
+        {
+          "img": "/img/index/products_slide_1.png",
+          "url": "/admin/index.html",
+          "title": "iPhone X"
+        },
+        {
+          "img": "/img/index/products_slide_1.png",
+          "url": "/admin/index.html",
+          "title": "iPhone X"
+        },
+        {
+          "img": "/img/index/products_slide_1.png",
+          "url": "/admin/index.html",
+          "title": "iPhone X"
+        },
+        {
+          "img": "/img/index/products_slide_1.png",
+          "url": "/admin/index.html",
+          "title": "iPhone X"
+        },
+        {
+          "img": "/img/index/products_slide_1.png",
+          "url": "/admin/index.html",
+          "title": "iPhone X"
+        }
+      ]
+    },
+    "products_map": {
+      "count": "4",
+      "list": [
+        {
+          "img": "/img/index/products_map_1.png",
+          "url": "/admin/index.html",
+          "title": "Power",
+          "description": "Power introduce"
+        },
+        {
+          "img": "/img/index/products_map_1.png",
+          "url": "/admin/index.html",
+          "title": "Power",
+          "description": "Power introduce"
+        },
+        {
+          "img": "/img/index/products_map_1.png",
+          "url": "/admin/index.html",
+          "title": "Power",
+          "description": "Power introduce"
+        },
+        {
+          "img": "/img/index/products_map_1.png",
+          "url": "/admin/index.html",
+          "title": "Power",
+          "description": "Power introduce"
+        }
+      ]
     },
     "products_list": {
-      
+      "title": "商品展示",
+      "description": "商品描述",
+      "count": "4",
+      "list": [
+        {
+          "img": "/img/index/products_list_1.png",
+          "url": "/admin/index.html",
+          "description": "CHOETECH 2-in-1 Wireless Charger Power Bank 10000mAh"
+        },
+        {
+          "img": "/img/index/products_list_1.png",
+          "url": "/admin/index.html",
+          "description": "CHOETECH 2-in-1 Wireless Charger Power Bank 10000mAh"
+        },
+        {
+          "img": "/img/index/products_list_1.png",
+          "url": "/admin/index.html",
+          "description": "CHOETECH 2-in-1 Wireless Charger Power Bank 10000mAh"
+        },
+        {
+          "img": "/img/index/products_list_1.png",
+          "url": "/admin/index.html",
+          "description": "CHOETECH 2-in-1 Wireless Charger Power Bank 10000mAh"
+        }
+      ]
     }
   }
 ]

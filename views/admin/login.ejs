@@ -2,13 +2,70 @@
 <html lang="zh-CN">
 <head>
   <meta charset="UTF-8">
-  <title><%= title %></title>
-  <link rel="stylesheet" href="https://cdn.bootcss.com/normalize/8.0.0/normalize.min.css">
-  <link href="https://cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
+  <title>登陆</title>
+  <link rel="stylesheet" href="/plugin/normalize-8.0.0/normalize.min.css">
   <link rel="stylesheet" href="/css/common/reset.css">
+  <style>
+    body {
+      background-color: #ddd;
+    }
+    .content {
+      padding: 50px 0;
+      height: 250px;
+      width: 400px;
+      border-radius: 4px;
+      background-color: #0099FF;
+      position: absolute;
+      left: 0;
+      right: 0;
+      top: 0;
+      bottom: 0;
+      margin: auto;
+    }
+    .username, .password {
+      display: block;
+      margin: 0 auto;
+      height: 40px;
+      width: 60%;
+      border-bottom: 1px solid #ddd;
+    }
+  </style>
 </head>
 <body>
-  a
-  <script src="https://cdn.bootcss.com/jquery/3.3.1/jquery.min.js"></script>
+  <div class="content">
+    <input type="text" class="username">
+    <input type="password" class="password">
+    <button class="login">登陆</button>
+  </div>
+  <script src="/plugin/jquery.min.js"></script>
+  <script>
+    $(function () {
+      $('.login').click(function () {
+        if ($('.username').val() == '') {
+          alert('用户名不能为空');
+        } else if ($('.password').val() == '') {
+          alert('密码不能为空');
+        } else {
+          $.ajax({
+            url: '/api/login',
+            type: 'POST',
+            contentType: 'application/json',
+            data: JSON.stringify({
+              username: $('.username').val(),
+              password: $('.password').val()
+            }),
+            success: function (data) {
+              alert(data.msg);
+              if (data.code == 0) {
+                location.reload();
+              } else if (data.code == 1) {
+                location.href = '/admin/index.html';
+              }
+            }
+          })
+        }
+      })
+    })
+  </script>
 </body>
 </html>

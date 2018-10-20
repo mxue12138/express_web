@@ -2,12 +2,14 @@
 <html lang="zh-CN">
 <head>
   <meta charset="UTF-8">
-  <title><%= title %></title>
-  <link rel="stylesheet" href="https://cdn.bootcss.com/normalize/8.0.0/normalize.min.css">
+  <title><%= data[0].title %></title>
+  <meta name="keywords" content="<%= data[0].keywords %>">
+  <meta name="description" content="<%= data[0].description %>">
+  <link rel="stylesheet" href="/plugin/normalize-8.0.0/normalize.min.css">
+  <link rel="stylesheet" href="https://at.alicdn.com/t/font_847183_zkr9rivaov.css">
+  <link rel="stylesheet" href="/plugin/swiper-4.4.1/css/swiper.min.css">
   <link rel="stylesheet" href="/css/common/reset.css">
   <link rel="stylesheet" href="/css/index/index.css">
-  <link rel="stylesheet" href="https://at.alicdn.com/t/font_847183_zkr9rivaov.css">
-  <link rel="stylesheet" href="https://cdn.bootcss.com/Swiper/4.3.0/css/swiper.min.css">
 </head>
 <body>
   <!-- header头部 start -->
@@ -16,10 +18,10 @@
   <!-- banner轮播图 start -->
   <div class="swiper-container banner">
     <div class="swiper-wrapper">
-      <% for (var i = 0; i < 4; i++) { %>
+      <% for (let i = 0; i < data[0].banner.count; i++) { %>
       <div class="swiper-slide">
-        <a href="/">
-          <img src="https://www.choetech.com/file/upload/201707/07/142953731.jpg" alt="">
+        <a href="<%= data[0].banner.list[i].url %>">
+          <img src="<%= data[0].banner.list[i].img %>" alt="">
         </a>
       </div>
       <% } %>
@@ -31,11 +33,11 @@
   <!-- banner轮播图 end -->
   <!-- products_slide商品小图 start -->
   <ul class="products_slide container">
-    <% for (var i = 0; i < 8; i++) { %>
+    <% for (let i = 0; i < data[0].products_slide.count; i++) { %>
     <li>
-      <a href="">
-        <img src="https://www.choetech.com/file/upload/201801/08/150616451.png" alt="iphoneX">
-        <p>iphoneX</p>
+      <a href="<%= data[0].products_slide.list[i].url %>">
+        <img src="<%= data[0].products_slide.list[i].img %>" alt="iphoneX">
+        <p><%= data[0].products_slide.list[i].title %></p>
       </a>
     </li>
     <% } %>
@@ -43,17 +45,17 @@
   <!-- products_slide商品小图 end -->
   <!-- products_map商品大图 start -->
   <ul class="products_map clearfix">
-    <% for (var i = 0; i < 4; i++) { %>
+    <% for (let i = 0; i < data[0].products_map.count; i++) { %>
     <li>
-      <a href="/">
+      <a href="<%= data[0].products_map.list[i].url %>">
         <div class="text">
           <h3>
-            Power
-            <small>Power introduce</small>
+            <%= data[0].products_map.list[i].title %>
+            <small><%= data[0].products_map.list[i].description %></small>
           </h3>
           <button class="shop">Shop now</button>
         </div>
-        <img src="https://www.choetech.com/file/upload/201707/07/154208171.jpg" alt="">
+        <img src="<%= data[0].products_map.list[i].img %>" alt="">
       </a>
     </li>
     <% } %>
@@ -62,26 +64,26 @@
   <!-- products_list商品四格列表 start -->
   <div class="products_list container">
     <h2>
-      商品展示
-      <small>小描述</small>
+      <%= data[0].products_list.title %>
+      <small><%= data[0].products_list.description %></small>
     </h2>
     <ul>
-      <% for (var i = 0; i < 4; i++) { %>
+      <% for (let i = 0; i < data[0].products_list.count; i++) { %>
       <li>
-        <a href="">
-          <img src="https://www.choetech.com/file/upload/201809/10/102609941.jpg.middle.jpg" alt="">
-          <p>CHOETECH 2-in-1 Wireless Charger Power Bank 10000mAh</p>
+        <a href="<%= data[0].products_list.list[i].url %>">
+          <img src="<%= data[0].products_list.list[i].img %>" alt="">
+          <p><%= data[0].products_list.list[i].description %></p>
         </a>
       </li>
       <% } %>
     </ul>
     <div class="more">
-      <a href="/">按钮</a>
+      <a href="/">more</a>
     </div>
   </div>
   <!-- products_list商品四格列表 end -->
-  <script src="https://cdn.bootcss.com/jquery/3.3.1/jquery.min.js"></script>
-  <script src="https://cdn.bootcss.com/Swiper/4.3.0/js/swiper.min.js"></script>
+  <script src="/plugin/jquery.min.js"></script>
+  <script src="/plugin/swiper-4.4.1/js/swiper.min.js"></script>
   <script src="/js/index/index.js"></script>
 </body>
 </html>

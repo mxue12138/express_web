@@ -1,1 +1,41 @@
-indexinfo
+<div>
+  <fieldset>
+    <legend>首页轮播图</legend>
+    <% for (let i = 0; i < data.banner.count; i++) { %>
+      <p>
+        <img src="<%= data.banner.list[i].img %>" alt="" class="img" style="width: 300px;display: inline-block;">
+        <input type="file" class="file">
+        <input type="text" class="url" value="<%= data.banner.list[i].url %>">
+        <input type="hidden" class="type" value="banner">
+        <input type="hidden" class="dbIndex" value="<%= i %>">
+        <button class="save">上传文件</button>
+      </p>
+    <% } %>
+    <p>显示数量：<input type="text" value="<%= data.banner.count %>"></p>
+  </fieldset>
+</div>
+<script>
+  $(function () {
+    var formData = new FormData();
+    $('.file').change(function () {
+      formData.append('file', $(this)[0].files[0]);
+    });
+    $('.save').click(function () {
+      formData.append('url', $(this).siblings('.url').val());
+      formData.append('type', $(this).siblings('.type').val());
+      formData.append('dbIndex', $(this).siblings('.dbIndex').val());
+      var that = $(this);
+      $.ajax({
+        url: '/upload',
+        type: 'POST',
+        data: formData,
+        cache: false,
+        processData: false,
+        contentType: false,
+        success: function (data) {
+          that.siblings('.img')[0].src = that.siblings('.img')[0].src + '?' + Math.floor(Math.random() * (9999 - 1000 + 1) + 1000);
+        }
+      })
+    })
+  })
+</script>
