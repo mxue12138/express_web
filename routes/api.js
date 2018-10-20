@@ -25,7 +25,13 @@ router.post('/api/login', function(req, res) {
 router.post('/upload', function(req, res) {
   uploadImg(req, 'img\\index\\').then(function (data) {
     var indexData = getData('index');
-    indexData[0].banner.list[data.dbIndex].url = data.url;
+    indexData[0][data.type].list[data.dbIndex].url = data.url;
+    if (data.title) {
+      indexData[0][data.type].list[data.dbIndex].title = data.title;
+    }
+    if (data.description) {
+      indexData[0][data.type].list[data.dbIndex].description = data.description;
+    }
     setData('index', indexData);
     res.send('ok');
   });

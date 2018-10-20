@@ -4,7 +4,7 @@
     "keywords": "",
     "description": "",
     "banner": {
-      "count": "6",
+      "count": "10",
       "list": [
         {
           "img": "/img/index/banner_0.png",
@@ -52,7 +52,7 @@
       "count": "8",
       "list": [
         {
-          "img": "/img/index/products_slide_1.png",
+          "img": "/img/index/products_slide_0.png",
           "url": "/admin/index.html",
           "title": "iPhone X"
         },
@@ -62,32 +62,32 @@
           "title": "iPhone X"
         },
         {
-          "img": "/img/index/products_slide_1.png",
+          "img": "/img/index/products_slide_2.png",
           "url": "/admin/index.html",
           "title": "iPhone X"
         },
         {
-          "img": "/img/index/products_slide_1.png",
+          "img": "/img/index/products_slide_3.png",
           "url": "/admin/index.html",
           "title": "iPhone X"
         },
         {
-          "img": "/img/index/products_slide_1.png",
+          "img": "/img/index/products_slide_4.png",
           "url": "/admin/index.html",
           "title": "iPhone X"
         },
         {
-          "img": "/img/index/products_slide_1.png",
+          "img": "/img/index/products_slide_5.png",
           "url": "/admin/index.html",
           "title": "iPhone X"
         },
         {
-          "img": "/img/index/products_slide_1.png",
+          "img": "/img/index/products_slide_6.png",
           "url": "/admin/index.html",
           "title": "iPhone X"
         },
         {
-          "img": "/img/index/products_slide_1.png",
+          "img": "/img/index/products_slide_7.png",
           "url": "/admin/index.html",
           "title": "iPhone X"
         }
@@ -97,7 +97,7 @@
       "count": "4",
       "list": [
         {
-          "img": "/img/index/products_map_1.png",
+          "img": "/img/index/products_map_0.png",
           "url": "/admin/index.html",
           "title": "Power",
           "description": "Power introduce"
@@ -109,13 +109,13 @@
           "description": "Power introduce"
         },
         {
-          "img": "/img/index/products_map_1.png",
+          "img": "/img/index/products_map_2.png",
           "url": "/admin/index.html",
           "title": "Power",
           "description": "Power introduce"
         },
         {
-          "img": "/img/index/products_map_1.png",
+          "img": "/img/index/products_map_3.png",
           "url": "/admin/index.html",
           "title": "Power",
           "description": "Power introduce"
@@ -128,7 +128,7 @@
       "count": "4",
       "list": [
         {
-          "img": "/img/index/products_list_1.png",
+          "img": "/img/index/products_list_0.png",
           "url": "/admin/index.html",
           "description": "CHOETECH 2-in-1 Wireless Charger Power Bank 10000mAh"
         },
@@ -138,12 +138,12 @@
           "description": "CHOETECH 2-in-1 Wireless Charger Power Bank 10000mAh"
         },
         {
-          "img": "/img/index/products_list_1.png",
+          "img": "/img/index/products_list_2.png",
           "url": "/admin/index.html",
           "description": "CHOETECH 2-in-1 Wireless Charger Power Bank 10000mAh"
         },
         {
-          "img": "/img/index/products_list_1.png",
+          "img": "/img/index/products_list_3.png",
           "url": "/admin/index.html",
           "description": "CHOETECH 2-in-1 Wireless Charger Power Bank 10000mAh"
         }

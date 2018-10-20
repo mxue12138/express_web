@@ -13,17 +13,74 @@
     <% } %>
     <p>显示数量：<input type="text" value="<%= data.banner.count %>"></p>
   </fieldset>
+  <fieldset>
+    <legend>首页商品小图</legend>
+    <% for (let i = 0; i < data.products_slide.count; i++) { %>
+      <p>
+        <img src="<%= data.products_slide.list[i].img %>" alt="" class="img" style="width: 100px;display: inline-block;">
+        <input type="file" class="file">
+        <input type="text" class="title" value="<%= data.products_slide.list[i].title %>">
+        <input type="text" class="description" value="<%= data.products_slide.list[i].description %>">
+        <input type="text" class="url" value="<%= data.products_slide.list[i].url %>">
+        <input type="hidden" class="type" value="products_slide">
+        <input type="hidden" class="dbIndex" value="<%= i %>">
+        <button class="save">上传文件</button>
+      </p>
+    <% } %>
+    <p>显示数量：<input type="text" value="<%= data.products_slide.count %>"></p>
+  </fieldset>
+  <fieldset>
+    <legend>首页商品大图</legend>
+    <% for (let i = 0; i < data.products_map.count; i++) { %>
+      <p>
+        <img src="<%= data.products_map.list[i].img %>" alt="" class="img" style="width: 300px;display: inline-block;">
+        <input type="file" class="file">
+        <input type="text" class="title" value="<%= data.products_map.list[i].title %>">
+        <input type="text" class="description" value="<%= data.products_map.list[i].description %>">
+        <input type="text" class="url" value="<%= data.products_map.list[i].url %>">
+        <input type="hidden" class="type" value="products_map">
+        <input type="hidden" class="dbIndex" value="<%= i %>">
+        <button class="save">上传文件</button>
+      </p>
+    <% } %>
+    <p>显示数量：<input type="text" value="<%= data.products_map.count %>"></p>
+  </fieldset>
+  <fieldset>
+    <legend>首页商品列表</legend>
+    <% for (let i = 0; i < data.products_list.count; i++) { %>
+      <p>
+        <img src="<%= data.products_list.list[i].img %>" alt="" class="img" style="width: 200px;display: inline-block;">
+        <input type="file" class="file">
+        <input type="text" class="description" value="<%= data.products_list.list[i].description %>">
+        <input type="text" class="url" value="<%= data.products_list.list[i].url %>">
+        <input type="hidden" class="type" value="products_list">
+        <input type="hidden" class="dbIndex" value="<%= i %>">
+        <button class="save">上传文件</button>
+      </p>
+    <% } %>
+    <p>显示数量：<input type="text" value="<%= data.products_list.count %>"></p>
+  </fieldset>
 </div>
 <script>
   $(function () {
     var formData = new FormData();
     $('.file').change(function () {
-      formData.append('file', $(this)[0].files[0]);
+      formData.set('file', $(this)[0].files[0]);
     });
     $('.save').click(function () {
-      formData.append('url', $(this).siblings('.url').val());
-      formData.append('type', $(this).siblings('.type').val());
-      formData.append('dbIndex', $(this).siblings('.dbIndex').val());
+      if ($(this).siblings('.title').val()) {
+        formData.set('title', $(this).siblings('.title').val());
+      } else {
+        formData.delete('title');
+      }
+      if ($(this).siblings('.description').val()) {
+        formData.set('description', $(this).siblings('.description').val());
+      } else {
+        formData.delete('description');
+      }
+      formData.set('url', $(this).siblings('.url').val());
+      formData.set('type', $(this).siblings('.type').val());
+      formData.set('dbIndex', $(this).siblings('.dbIndex').val());
       var that = $(this);
       $.ajax({
         url: '/upload',
