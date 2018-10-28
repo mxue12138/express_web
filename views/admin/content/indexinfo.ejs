@@ -3,12 +3,12 @@
     <legend>首页轮播图</legend>
     <% for (let i = 0; i < data.banner.count; i++) { %>
       <p>
-        <img src="<%= data.banner.list[i].img %>" alt="" class="img" style="width: 300px;display: inline-block;">
+        <img src="<%= data.banner.list[i].img %>" alt="" class="img">
         <input type="file" class="file">
         <input type="text" class="url" value="<%= data.banner.list[i].url %>">
         <input type="hidden" class="type" value="banner">
         <input type="hidden" class="dbIndex" value="<%= i %>">
-        <button class="save">上传文件</button>
+        <button class="save">保存</button>
       </p>
     <% } %>
     <p>显示数量：<input type="text" value="<%= data.banner.count %>"></p>
@@ -17,14 +17,13 @@
     <legend>首页商品小图</legend>
     <% for (let i = 0; i < data.products_slide.count; i++) { %>
       <p>
-        <img src="<%= data.products_slide.list[i].img %>" alt="" class="img" style="width: 100px;display: inline-block;">
+        <img src="<%= data.products_slide.list[i].img %>" alt="" class="img">
         <input type="file" class="file">
         <input type="text" class="title" value="<%= data.products_slide.list[i].title %>">
-        <input type="text" class="description" value="<%= data.products_slide.list[i].description %>">
         <input type="text" class="url" value="<%= data.products_slide.list[i].url %>">
         <input type="hidden" class="type" value="products_slide">
         <input type="hidden" class="dbIndex" value="<%= i %>">
-        <button class="save">上传文件</button>
+        <button class="save">保存</button>
       </p>
     <% } %>
     <p>显示数量：<input type="text" value="<%= data.products_slide.count %>"></p>
@@ -33,14 +32,14 @@
     <legend>首页商品大图</legend>
     <% for (let i = 0; i < data.products_map.count; i++) { %>
       <p>
-        <img src="<%= data.products_map.list[i].img %>" alt="" class="img" style="width: 300px;display: inline-block;">
+        <img src="<%= data.products_map.list[i].img %>" alt="" class="img">
         <input type="file" class="file">
         <input type="text" class="title" value="<%= data.products_map.list[i].title %>">
         <input type="text" class="description" value="<%= data.products_map.list[i].description %>">
         <input type="text" class="url" value="<%= data.products_map.list[i].url %>">
         <input type="hidden" class="type" value="products_map">
         <input type="hidden" class="dbIndex" value="<%= i %>">
-        <button class="save">上传文件</button>
+        <button class="save">保存</button>
       </p>
     <% } %>
     <p>显示数量：<input type="text" value="<%= data.products_map.count %>"></p>
@@ -49,13 +48,13 @@
     <legend>首页商品列表</legend>
     <% for (let i = 0; i < data.products_list.count; i++) { %>
       <p>
-        <img src="<%= data.products_list.list[i].img %>" alt="" class="img" style="width: 200px;display: inline-block;">
+        <img src="<%= data.products_list.list[i].img %>" alt="" class="img">
         <input type="file" class="file">
         <input type="text" class="description" value="<%= data.products_list.list[i].description %>">
         <input type="text" class="url" value="<%= data.products_list.list[i].url %>">
         <input type="hidden" class="type" value="products_list">
         <input type="hidden" class="dbIndex" value="<%= i %>">
-        <button class="save">上传文件</button>
+        <button class="save">保存</button>
       </p>
     <% } %>
     <p>显示数量：<input type="text" value="<%= data.products_list.count %>"></p>
@@ -68,6 +67,7 @@
       formData.set('file', $(this)[0].files[0]);
     });
     $('.save').click(function () {
+      $(this).text('保存中，请稍等。');
       if ($(this).siblings('.title').val()) {
         formData.set('title', $(this).siblings('.title').val());
       } else {
@@ -86,11 +86,23 @@
         url: '/upload',
         type: 'POST',
         data: formData,
+        async: false,
         cache: false,
         processData: false,
         contentType: false,
         success: function (data) {
+          that.text('数据保存成功');
+          setTimeout(function () {
+            that.text('保存');
+          }, 3000)
           that.siblings('.img')[0].src = that.siblings('.img')[0].src + '?' + Math.floor(Math.random() * (9999 - 1000 + 1) + 1000);
+        },
+        error: function (error) {
+          that.text('数据保存失败，请检查网络或联系开发者');
+          setTimeout(function () {
+            that.text('保存');
+          }, 3000)
+          alert(error.status + ' ' + error.statusText);
         }
       })
     })

@@ -2,9 +2,9 @@
 <html lang="zh-CN">
 <head>
   <meta charset="UTF-8">
-  <title><%= data[0].title %></title>
-  <meta name="keywords" content="<%= data[0].keywords %>">
-  <meta name="description" content="<%= data[0].description %>">
+  <title><%= index_data[0].title %></title>
+  <meta name="keywords" content="<%= index_data[0].keywords %>">
+  <meta name="description" content="<%= index_data[0].description %>">
   <link rel="stylesheet" href="/plugin/normalize-8.0.0/normalize.min.css">
   <link rel="stylesheet" href="https://at.alicdn.com/t/font_847183_zkr9rivaov.css">
   <link rel="stylesheet" href="/plugin/swiper-4.4.1/css/swiper.min.css">
@@ -13,31 +13,18 @@
 </head>
 <body>
   <!-- header头部 start -->
-  <%- include('./common/header'); %>
+<%- include('./common/header', { data: 0}); %>
   <!-- header头部 end -->
   <!-- banner轮播图 start -->
-  <div class="swiper-container banner">
-    <div class="swiper-wrapper">
-      <% for (let i = 0; i < data[0].banner.count; i++) { %>
-      <div class="swiper-slide">
-        <a href="<%= data[0].banner.list[i].url %>">
-          <img src="<%= data[0].banner.list[i].img %>" alt="">
-        </a>
-      </div>
-      <% } %>
-    </div>
-    <div class="swiper-pagination"></div>
-    <div class="swiper-button-next"></div>
-    <div class="swiper-button-prev"></div>
-  </div>
+<%- include('./common/banner', { data: index_data}); %>
   <!-- banner轮播图 end -->
   <!-- products_slide商品小图 start -->
   <ul class="products_slide container">
-    <% for (let i = 0; i < data[0].products_slide.count; i++) { %>
+    <% for (let i = 0; i < index_data[0].products_slide.count; i++) { %>
     <li>
-      <a href="<%= data[0].products_slide.list[i].url %>">
-        <img src="<%= data[0].products_slide.list[i].img %>" alt="iphoneX">
-        <p><%= data[0].products_slide.list[i].title %></p>
+      <a href="<%= index_data[0].products_slide.list[i].url %>">
+        <img src="<%= index_data[0].products_slide.list[i].img %>" alt="iphoneX">
+        <p><%= index_data[0].products_slide.list[i].title %></p>
       </a>
     </li>
     <% } %>
@@ -45,17 +32,17 @@
   <!-- products_slide商品小图 end -->
   <!-- products_map商品大图 start -->
   <ul class="products_map clearfix">
-    <% for (let i = 0; i < data[0].products_map.count; i++) { %>
+    <% for (let i = 0; i < index_data[0].products_map.count; i++) { %>
     <li>
-      <a href="<%= data[0].products_map.list[i].url %>">
+      <a href="<%= index_data[0].products_map.list[i].url %>">
         <div class="text">
           <h3>
-            <%= data[0].products_map.list[i].title %>
-            <small><%= data[0].products_map.list[i].description %></small>
+            <%= index_data[0].products_map.list[i].title %>
+            <small><%= index_data[0].products_map.list[i].description %></small>
           </h3>
           <button class="shop">Shop now</button>
         </div>
-        <img src="<%= data[0].products_map.list[i].img %>" alt="">
+        <img src="<%= index_data[0].products_map.list[i].img %>" alt="">
       </a>
     </li>
     <% } %>
@@ -64,15 +51,15 @@
   <!-- products_list商品四格列表 start -->
   <div class="products_list container">
     <h2>
-      <%= data[0].products_list.title %>
-      <small><%= data[0].products_list.description %></small>
+      Best Sellers
+      <small>Browse our most popular products</small>
     </h2>
     <ul>
-      <% for (let i = 0; i < data[0].products_list.count; i++) { %>
+      <% for (let i = 0; i < index_data[0].products_list.count; i++) { %>
       <li>
-        <a href="<%= data[0].products_list.list[i].url %>">
-          <img src="<%= data[0].products_list.list[i].img %>" alt="">
-          <p><%= data[0].products_list.list[i].description %></p>
+        <a href="<%= index_data[0].products_list.list[i].url %>">
+          <img src="<%= index_data[0].products_list.list[i].img %>" alt="">
+          <p><%= index_data[0].products_list.list[i].description %></p>
         </a>
       </li>
       <% } %>

@@ -10,7 +10,7 @@ router.get([
     '/admin/classify.html',
     '/admin/goods.html'
   ], function(req, res, next) {
-  if (req.cookies.username == getData('user')[0].username && req.cookies.password == getData('user')[0].password) {
+  if (req.cookies.username == getData('user')[0].list[0].username && req.cookies.password == getData('user')[0].list[0].password) {
     next();
   } else {
     res.redirect('/admin/login.html');
@@ -18,7 +18,7 @@ router.get([
 });
 
 router.get('/admin/login.html', function(req, res) {
-  if (req.cookies.username == getData('user')[0].username && req.cookies.password == getData('user')[0].password) {
+  if (req.cookies.username == getData('user')[0].list[0].username && req.cookies.password == getData('user')[0].list[0].password) {
     res.redirect('/admin/index.html');
     return;
   }
@@ -48,9 +48,11 @@ router.get('/admin/indexinfo.html', function(req, res) {
 });
 
 router.get('/admin/classify.html', function(req, res) {
+  console.log(getData('classify')[0]);
   res.render('admin/index', {
     title: '商品分类管理',
-    content: 'classify'
+    content: 'classify',
+    data: getData('classify')[0]
   });
 });
 

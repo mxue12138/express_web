@@ -16,9 +16,4 @@ $(function () {
       prevEl: '.swiper-button-prev',
     },
   });
-  $(window).scroll(function(){
-    if ($(window).scrollTop() > (document.documentElement.clientHeight / 2)) {
-      console.log('scroll');
-    }
-  });
 })

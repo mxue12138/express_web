@@ -1,1 +1,51 @@
-classify
+<div>
+  <fieldset>
+    <legend>商品分类设置</legend>
+    <% for (let i = 0; i < data.classify.list.length; i++) { %>
+      <p>
+        <img src="<%= data.classify.list[i].img %>" alt="" class="img">
+        <input type="text" class="title" value="<%= data.classify.list[i].title %>">
+        <input type="file" class="file">
+        <input type="hidden" class="id" value="<%= data.classify.list[i].id %>">
+        <button class="save">保存</button>
+      </p>
+    <% } %>
+  </fieldset>
+</div>
+<script>
+  $(function () {
+    var formData = new FormData();
+    $('.file').change(function () {
+      formData.set('file', $(this)[0].files[0]);
+    });
+    $('.save').click(function () {
+      $(this).text('保存中，请稍等。');
+      formData.set('title', $(this).siblings('.title').val());
+      formData.set('id', $(this).siblings('.id').val());
+      var that = $(this);
+      $.ajax({
+        url: '/api/classify',
+        type: 'POST',
+        data: formData,
+        async: false,
+        cache: false,
+        processData: false,
+        contentType: false,
+        success: function (data) {
+          that.text('数据保存成功');
+          // setTimeout(function () {
+          //   that.text('保存');
+          // }, 3000)
+          // that.siblings('.img')[0].src = that.siblings('.img')[0].src + '?' + Math.floor(Math.random() * (9999 - 1000 + 1) + 1000);
+        },
+        error: function (error) {
+          // that.text('数据保存失败，请检查网络或联系开发者');
+          // setTimeout(function () {
+          //   that.text('保存');
+          // }, 3000)
+          // alert(error.status + ' ' + error.statusText);
+        }
+      })
+    })
+  })
+</script>

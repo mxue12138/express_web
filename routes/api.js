@@ -4,9 +4,10 @@ var getData = require(rootDir + '/tools/data/getData');
 var setData = require(rootDir + '/tools/data/setData');
 var md5 = require('md5');
 var uploadImg = require(rootDir + '/tools/uploadImg');
+var formidable = require('formidable');
 
 router.post('/api/login', function(req, res) {
-  var userDB = getData('user')[0];
+  var userDB = getData('user')[0].list[0];
   if (req.body.username == userDB.username && md5(req.body.password) == userDB.password) {
     res.cookie('username', userDB.username, {maxAge: 604800000});
     res.cookie('password', md5(userDB.username), {maxAge: 604800000});
@@ -37,4 +38,15 @@ router.post('/upload', function(req, res) {
   });
 });
 
+router.post('/api/classify', function(req, res) {
+  var form = new formidable.IncomingForm();
+  form.uploadDir = rootDir + '\\public\\img\\index\\';
+  form.keepExtensions = true;
+  form.parse(req, function(err, fields, files){
+    console.log(fields.id);
+    console.log(fields.title);
+    console.log(files.file);
+    res.send('1');
+  })
+})
 module.exports = router;

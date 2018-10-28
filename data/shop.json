@@ -1,82 +1,86 @@
 [
   {
-    "sid": "0",
-    "title": "测试标题",
-    "img": "/img/banner.jpg",
-    "describe": "测试描述",
-    "price": "100",
-    "link": "https://www.baidu.com"
-  },
-  {
-    "sid": "1",
-    "title": "测试标题",
-    "img": "/img/banner.jpg",
-    "describe": "测试描述",
-    "price": "100",
-    "link": "https://www.baidu.com"
-  },
-  {
-    "sid": "2",
-    "title": "测试标题",
-    "img": "/img/banner.jpg",
-    "describe": "测试描述",
-    "price": "100",
-    "link": "https://www.baidu.com"
-  },
-  {
-    "sid": "3",
-    "title": "测试标题",
-    "img": "/img/banner.jpg",
-    "describe": "测试描述",
-    "price": "100",
-    "link": "https://www.baidu.com"
-  },
-  {
-    "sid": "4",
-    "title": "测试标题",
-    "img": "/img/banner.jpg",
-    "describe": "测试描述",
-    "price": "100",
-    "link": "https://www.baidu.com"
-  },
-  {
-    "sid": "5",
-    "title": "测试标题",
-    "img": "/img/banner.jpg",
-    "describe": "测试描述",
-    "price": "100",
-    "link": "https://www.baidu.com"
-  },
-  {
-    "sid": "6",
-    "title": "测试标题",
-    "img": "/img/banner.jpg",
-    "describe": "测试描述",
-    "price": "100",
-    "link": "https://www.baidu.com"
-  },
-  {
-    "sid": "7",
-    "title": "测试标题",
-    "img": "/img/banner.jpg",
-    "describe": "测试描述",
-    "price": "100",
-    "link": "https://www.baidu.com"
-  },
-  {
-    "sid": "8",
-    "title": "测试标题",
-    "img": "/img/banner.jpg",
-    "describe": "测试描述",
-    "price": "100",
-    "link": "https://www.baidu.com"
-  },
-  {
-    "sid": "9",
-    "title": "测试标题",
-    "img": "/img/banner.jpg",
-    "describe": "测试描述",
-    "price": "100",
-    "link": "https://www.baidu.com"
+    "list": [
+      {
+        "sid": "0",
+        "title": "测试标题",
+        "img": "/img/shop/shop_0.png",
+        "describe": "测试描述",
+        "classify_id": "1",
+        "price": "100"
+      },
+      {
+        "sid": "1",
+        "title": "测试标题",
+        "img": "/img/shop/shop_0.png",
+        "describe": "测试描述",
+        "classify_id": "1",
+        "price": "100"
+      },
+      {
+        "sid": "2",
+        "title": "测试标题",
+        "img": "/img/shop/shop_0.png",
+        "describe": "测试描述",
+        "classify_id": "1",
+        "price": "100"
+      },
+      {
+        "sid": "3",
+        "title": "测试标题",
+        "img": "/img/shop/shop_0.png",
+        "describe": "测试描述",
+        "classify_id": "1",
+        "price": "100"
+      },
+      {
+        "sid": "4",
+        "title": "测试标题",
+        "img": "/img/shop/shop_0.png",
+        "describe": "测试描述",
+        "classify_id": "1",
+        "price": "100"
+      },
+      {
+        "sid": "5",
+        "title": "测试标题",
+        "img": "/img/shop/shop_0.png",
+        "describe": "测试描述",
+        "classify_id": "1",
+        "price": "100"
+      },
+      {
+        "sid": "6",
+        "title": "测试标题",
+        "img": "/img/shop/shop_0.png",
+        "describe": "测试描述",
+        "classify_id": "1",
+        "price": "100"
+      },
+      {
+        "sid": "7",
+        "title": "测试标题",
+        "img": "/img/shop/shop_0.png",
+        "describe": "测试描述",
+        "classify_id": "1",
+        "price": "100"
+      },
+      {
+        "sid": "8",
+        "title": "测试标题",
+        "img": "/img/shop/shop_0.png",
+        "describe": "测试描述",
+        "classify_id": "1",
+        "price": "100"
+      },
+      {
+        "sid": "9",
+        "title": "测试标题",
+        "img": "/img/shop/shop_0.png",
+        "describe": "测试描述",
+        "classify_id": "1",
+        "price": "100"
+      }
+    ]
   }
 ]

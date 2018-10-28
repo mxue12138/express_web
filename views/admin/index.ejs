@@ -5,6 +5,7 @@
   <title><%= title %></title>
   <link rel="stylesheet" href="/plugin/normalize-8.0.0/normalize.min.css">
   <link rel="stylesheet" href="/css/common/reset.css">
+  <script src="/plugin/jquery.min.js"></script>
   <style>
     body {
       background-color: #f5f5f5;
@@ -93,7 +94,7 @@
   <!-- sidebar侧边栏 start -->
   <div class="sidebar">
     <ul>
-      <li><a href="/admin/index.html">管理后台首页</a></li>
+      <li class="group"><a href="/admin/index.html">管理后台首页</a></li>
       <li class="group"><a href="/admin/webinfo.html">网站信息配置</a></li>
       <li><a href="/admin/indexinfo.html">首页信息配置</a></li>
       <li class="group"><a href="/admin/classify.html">商品分类管理</a></li>
@@ -103,7 +104,14 @@
   <!-- sidebar侧边栏 end -->
   <!-- content主体 start -->
   <div class="content">
-    <script src="/plugin/jquery.min.js"></script>
+    <style>
+      img {
+        width: auto;
+        max-width: 200px;
+        height: auto;
+        max-height: 80px;
+      }
+    </style>
     <%- include('./content/' + content, {data: data}); %>
   </div>
   <!-- content主体 end -->
