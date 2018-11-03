@@ -1,51 +1,77 @@
-<div>
-  <fieldset>
-    <legend>商品分类设置</legend>
-    <% for (let i = 0; i < data.classify.list.length; i++) { %>
-      <p>
-        <img src="<%= data.classify.list[i].img %>" alt="" class="img">
-        <input type="text" class="title" value="<%= data.classify.list[i].title %>">
-        <input type="file" class="file">
-        <input type="hidden" class="id" value="<%= data.classify.list[i].id %>">
+<div class="classify">
+  <div class="classify_info">
+    <fieldset>
+      <legend>商品分类页面SEO设置</legend>
+        <input type="text" class="title" value="<%= data.title %>">
+        <input type="text" class="keywords" value="<%= data.keywords %>">
+        <input type="text" class="description" value="<%= data.description %>">
         <button class="save">保存</button>
-      </p>
-    <% } %>
-  </fieldset>
+    </fieldset>
+  </div>
+  <div class="classify_banner">
+    <fieldset>
+      <legend>商品分类轮播图设置</legend>
+      <% for (let i = 0; i < data.banner.list.length; i++) { %>
+        <p>
+          <img src="<%= data.banner.list[i].img %>" alt="" class="img">
+          <input type="text" class="url" value="<%= data.banner.list[i].url %>">
+          <input type="file" class="file" accept="image/gif, image/jpeg, image/png">
+          <input type="text" readonly class="id" value="<%= data.banner.list[i].id %>">
+          <button class="save">保存</button>
+          <button class="delete">删除</button>
+        </p>
+      <% } %>
+      <button class="addBanner">添加轮播图</button>
+    </fieldset>
+  </div>
+  <div class="classify_list">
+    <fieldset>
+      <legend>商品分类设置</legend>
+      <% for (let i = 0; i < data.classify.list.length; i++) { %>
+        <p>
+          <img src="<%= data.classify.list[i].img %>" alt="" class="img">
+          <input type="text" class="title" value="<%= data.classify.list[i].title %>">
+          <input type="file" class="file" accept="image/gif, image/jpeg, image/png">
+          <input type="text" readonly class="id" value="<%= data.classify.list[i].id %>">
+          <button class="save">保存</button>
+          <button class="delete">删除</button>
+        </p>
+      <% } %>
+      <button class="addClassify">添加分类</button>
+    </fieldset>
+  </div>
 </div>
+
 <script>
-  $(function () {
+  $('.classify .classify_info .save').click(function () {
     var formData = new FormData();
-    $('.file').change(function () {
-      formData.set('file', $(this)[0].files[0]);
-    });
-    $('.save').click(function () {
-      $(this).text('保存中，请稍等。');
-      formData.set('title', $(this).siblings('.title').val());
-      formData.set('id', $(this).siblings('.id').val());
-      var that = $(this);
-      $.ajax({
-        url: '/api/classify',
-        type: 'POST',
-        data: formData,
-        async: false,
-        cache: false,
-        processData: false,
-        contentType: false,
-        success: function (data) {
-          that.text('数据保存成功');
-          // setTimeout(function () {
-          //   that.text('保存');
-          // }, 3000)
-          // that.siblings('.img')[0].src = that.siblings('.img')[0].src + '?' + Math.floor(Math.random() * (9999 - 1000 + 1) + 1000);
-        },
-        error: function (error) {
-          // that.text('数据保存失败，请检查网络或联系开发者');
-          // setTimeout(function () {
-          //   that.text('保存');
-          // }, 3000)
-          // alert(error.status + ' ' + error.statusText);
+    formData.set('title', $(this).siblings('.title').val());
+    formData.set('keywords', $(this).siblings('.keywords').val());
+    formData.set('description', $(this).siblings('.description').val());
+    formData.set('type', 'info');
+    $(this).text('保存中，请稍等。');
+    var that = $(this);
+    $.ajax({
+      url: '/api/classify',
+      type: 'POST',
+      data: formData,
+      async: false,
+      cache: false,
+      processData: false,
+      contentType: false,
+      success: function (data) {
+        if (data.code == 1) {
+          that.text('保存');
+          alert('保存成功。');
+        } else {
+          that.text('保存');
+          alert('保存失败。');
         }
-      })
+      },
+      error: function (error) {
+        that.text('保存');
+        alert('保存失败。');
+      }
     })
-  })
+  });
 </script>

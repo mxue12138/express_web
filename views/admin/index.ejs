@@ -5,6 +5,7 @@
   <title><%= title %></title>
   <link rel="stylesheet" href="/plugin/normalize-8.0.0/normalize.min.css">
   <link rel="stylesheet" href="/css/common/reset.css">
+  <link rel="stylesheet" href="/css/admin/<%= content %>.css">
   <script src="/plugin/jquery.min.js"></script>
   <style>
     body {
@@ -80,9 +81,6 @@
       bottom: 0;
       z-index: 7;
     }
-    /* content内部class类 start */
-
-    /* content内部class类 end */
   </style>
 </head>
 <body>
@@ -104,16 +102,9 @@
   <!-- sidebar侧边栏 end -->
   <!-- content主体 start -->
   <div class="content">
-    <style>
-      img {
-        width: auto;
-        max-width: 200px;
-        height: auto;
-        max-height: 80px;
-      }
-    </style>
     <%- include('./content/' + content, {data: data}); %>
   </div>
+  <script src="/js/admin/<%= content %>.js"></script>
   <!-- content主体 end -->
 </body>
 </html>

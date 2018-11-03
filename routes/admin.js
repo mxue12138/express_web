@@ -2,7 +2,7 @@ var express = require('express');
 var router = express.Router();
 var getData = require(rootDir + '/tools/data/getData');
 
-router.get([
+router.all([
     '/admin/',
     '/admin/index.html',
     '/admin/webinfo.html',
@@ -48,7 +48,6 @@ router.get('/admin/indexinfo.html', function(req, res) {
 });
 
 router.get('/admin/classify.html', function(req, res) {
-  console.log(getData('classify')[0]);
   res.render('admin/index', {
     title: '商品分类管理',
     content: 'classify',

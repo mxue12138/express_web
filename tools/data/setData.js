@@ -4,7 +4,7 @@ module.exports = function (name, data) {
     if (error) {
       return false;
     } else {
-      return true;
+      return data;
     }
   })
 }

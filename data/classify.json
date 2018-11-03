@@ -1,49 +1,13 @@
 [
   {
     "title": "分类页",
-    "keywords": "",
-    "description": "",
+    "keywords": "分类关键词aaa",
+    "description": "分类描述",
     "banner": {
-      "count": "10",
       "list": [
         {
-          "img": "/img/index/banner_0.png",
-          "url": "/admin/index.html"
-        },
-        {
-          "img": "/img/index/banner_1.png",
-          "url": "/admin/index.html"
-        },
-        {
-          "img": "/img/index/banner_2.png",
-          "url": "/admin/index.html"
-        },
-        {
-          "img": "/img/index/banner_3.png",
-          "url": "/admin/index.html"
-        },
-        {
-          "img": "/img/index/banner_4.png",
-          "url": "/admin/index.html"
-        },
-        {
-          "img": "/img/index/banner_5.png",
-          "url": "/admin/index.html"
-        },
-        {
-          "img": "/img/index/banner_6.png",
-          "url": "/admin/index.html"
-        },
-        {
-          "img": "/img/index/banner_7.png",
-          "url": "/admin/index.html"
-        },
-        {
-          "img": "/img/index/banner_8.png",
-          "url": "/admin/index.html"
-        },
-        {
-          "img": "/img/index/banner_9.png",
+          "id": "0",
+          "img": "/img/index/upload_03bdc9600507d88bd4244a296dc4c277.png",
           "url": "/admin/index.html"
         }
       ]
@@ -53,47 +17,7 @@
         {
           "id": "0",
           "title": "Charger",
-          "img": "/img/index/classify_map_0.png"
-        },
-        {
-          "id": "1",
-          "title": "Charger",
-          "img": "/img/index/classify_map_0.png"
-        },
-        {
-          "id": "2",
-          "title": "Charger",
-          "img": "/img/index/classify_map_0.png"
-        },
-        {
-          "id": "3",
-          "title": "Charger",
-          "img": "/img/index/classify_map_0.png"
-        },
-        {
-          "id": "4",
-          "title": "Charger",
-          "img": "/img/index/classify_map_0.png"
-        },
-        {
-          "id": "5",
-          "title": "Charger",
-          "img": "/img/index/classify_map_0.png"
-        },
-        {
-          "id": "6",
-          "title": "Charger",
-          "img": "/img/index/classify_map_0.png"
-        },
-        {
-          "id": "7",
-          "title": "Charger",
-          "img": "/img/index/classify_map_0.png"
-        },
-        {
-          "id": "8",
-          "title": "Charger",
-          "img": "/img/index/classify_map_0.png"
+          "img": "/img/index/upload_24b75f67ac3c587aacecad16ca1f2d1d.png"
         }
       ]
     }

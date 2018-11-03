@@ -28,7 +28,7 @@ ul, ol {
 img {
   vertical-align: bottom;
   width: 100%;
-  display: block;
+  display: inline-block;
 }
 .container {
   margin: 0 auto;

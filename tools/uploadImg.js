@@ -3,7 +3,7 @@ var fs = require('fs');
 module.exports = function (req, path) {
   return new Promise(function(resolve, reject){
     var form = new formidable.IncomingForm();
-    form.uploadDir = rootDir + '\\public\\' + path;
+    form.uploadDir = rootDir + '/public/' + path;
     form.keepExtensions = true;
     form.parse(req, function(err, fields, files){
       if (files.file) {
