@@ -6,7 +6,7 @@
         "title": "测试标题",
         "img": "/img/shop/shop_0.png",
         "describe": "测试描述",
-        "classify_id": "1",
+        "classify_id": "0",
         "price": "100"
       },
       {
@@ -14,7 +14,7 @@
         "title": "测试标题",
         "img": "/img/shop/shop_0.png",
         "describe": "测试描述",
-        "classify_id": "1",
+        "classify_id": "0",
         "price": "100"
       },
       {
@@ -22,7 +22,7 @@
         "title": "测试标题",
         "img": "/img/shop/shop_0.png",
         "describe": "测试描述",
-        "classify_id": "1",
+        "classify_id": "0",
         "price": "100"
       },
       {
@@ -30,7 +30,7 @@
         "title": "测试标题",
         "img": "/img/shop/shop_0.png",
         "describe": "测试描述",
-        "classify_id": "1",
+        "classify_id": "0",
         "price": "100"
       },
       {
@@ -38,7 +38,7 @@
         "title": "测试标题",
         "img": "/img/shop/shop_0.png",
         "describe": "测试描述",
-        "classify_id": "1",
+        "classify_id": "0",
         "price": "100"
       },
       {
@@ -46,7 +46,7 @@
         "title": "测试标题",
         "img": "/img/shop/shop_0.png",
         "describe": "测试描述",
-        "classify_id": "1",
+        "classify_id": "0",
         "price": "100"
       },
       {
@@ -54,7 +54,7 @@
         "title": "测试标题",
         "img": "/img/shop/shop_0.png",
         "describe": "测试描述",
-        "classify_id": "1",
+        "classify_id": "0",
         "price": "100"
       },
       {
@@ -62,7 +62,7 @@
         "title": "测试标题",
         "img": "/img/shop/shop_0.png",
         "describe": "测试描述",
-        "classify_id": "1",
+        "classify_id": "0",
         "price": "100"
       },
       {
@@ -70,7 +70,7 @@
         "title": "测试标题",
         "img": "/img/shop/shop_0.png",
         "describe": "测试描述",
-        "classify_id": "1",
+        "classify_id": "0",
         "price": "100"
       },
       {
@@ -78,7 +78,7 @@
         "title": "测试标题",
         "img": "/img/shop/shop_0.png",
         "describe": "测试描述",
-        "classify_id": "1",
+        "classify_id": "0",
         "price": "100"
       }
     ]

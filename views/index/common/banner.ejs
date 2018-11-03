@@ -1,6 +1,6 @@
   <div class="swiper-container banner">
     <div class="swiper-wrapper">
-      <% for (let i = 0; i < data[0].banner.count; i++) { %>
+      <% for (let i = 0; i < data[0].banner.list.length; i++) { %>
       <div class="swiper-slide">
         <a href="<%= data[0].banner.list[i].url %>">
           <img src="<%= data[0].banner.list[i].img %>" alt="">
