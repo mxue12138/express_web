@@ -3,81 +3,121 @@
     "list": [
       {
         "sid": "0",
-        "title": "测试标题",
-        "img": "/img/shop/shop_0.png",
-        "describe": "测试描述",
+        "title": "Qi Wireless Charger T511 ROSE GOLD",
+        "img": [
+          "/img/shop/114300991.jpg",
+          "/img/shop/114300991.jpg",
+          "/img/shop/114300991.jpg"
+        ],
+        "describe": "CHOE-T511RD-CHOETECH Qi Certified T511 Qi Wireless Charger Pad with Anti-Slip Rubber for iPhone 8 / 8 Plus, iPhone X, Samsung Galaxy Note 8 / S8 / S8 Plus, S7 / S7 Edge and Qi-Enabled Devices",
+        "info": "这是商品详情",
+        "url": "https://www.baidu.com",
+        "color": "#FF99CC",
         "classify_id": "0",
         "price": "100"
       },
       {
         "sid": "1",
-        "title": "测试标题",
-        "img": "/img/shop/shop_0.png",
-        "describe": "测试描述",
+        "title": "Qi Wireless Charger T511 ROSE GOLD",
+        "img": [
+          "/img/shop/114300991.jpg",
+          "/img/shop/114300991.jpg",
+          "/img/shop/114300991.jpg"
+        ],
+        "describe": "CHOE-T511RD-CHOETECH Qi Certified T511 Qi Wireless Charger Pad with Anti-Slip Rubber for iPhone 8 / 8 Plus, iPhone X, Samsung Galaxy Note 8 / S8 / S8 Plus, S7 / S7 Edge and Qi-Enabled Devices",
+        "info": "这是商品详情",
+        "url": "https://www.baidu.com",
+        "color": "#FF99CC",
         "classify_id": "0",
         "price": "100"
       },
       {
         "sid": "2",
-        "title": "测试标题",
-        "img": "/img/shop/shop_0.png",
-        "describe": "测试描述",
+        "title": "Qi Wireless Charger T511 ROSE GOLD",
+        "img": [
+          "/img/shop/114300991.jpg",
+          "/img/shop/114300991.jpg",
+          "/img/shop/114300991.jpg"
+        ],
+        "describe": "CHOE-T511RD-CHOETECH Qi Certified T511 Qi Wireless Charger Pad with Anti-Slip Rubber for iPhone 8 / 8 Plus, iPhone X, Samsung Galaxy Note 8 / S8 / S8 Plus, S7 / S7 Edge and Qi-Enabled Devices",
+        "info": "这是商品详情",
+        "url": "https://www.baidu.com",
+        "color": "#FF99CC",
         "classify_id": "0",
         "price": "100"
       },
       {
         "sid": "3",
-        "title": "测试标题",
-        "img": "/img/shop/shop_0.png",
-        "describe": "测试描述",
+        "title": "Qi Wireless Charger T511 ROSE GOLD",
+        "img": [
+          "/img/shop/114300991.jpg",
+          "/img/shop/114300991.jpg",
+          "/img/shop/114300991.jpg"
+        ],
+        "describe": "CHOE-T511RD-CHOETECH Qi Certified T511 Qi Wireless Charger Pad with Anti-Slip Rubber for iPhone 8 / 8 Plus, iPhone X, Samsung Galaxy Note 8 / S8 / S8 Plus, S7 / S7 Edge and Qi-Enabled Devices",
+        "info": "这是商品详情",
+        "url": "https://www.baidu.com",
+        "color": "#FF99CC",
         "classify_id": "0",
         "price": "100"
       },
       {
         "sid": "4",
-        "title": "测试标题",
-        "img": "/img/shop/shop_0.png",
-        "describe": "测试描述",
+        "title": "Qi Wireless Charger T511 ROSE GOLD",
+        "img": [
+          "/img/shop/114300991.jpg",
+          "/img/shop/114300991.jpg",
+          "/img/shop/114300991.jpg"
+        ],
+        "describe": "CHOE-T511RD-CHOETECH Qi Certified T511 Qi Wireless Charger Pad with Anti-Slip Rubber for iPhone 8 / 8 Plus, iPhone X, Samsung Galaxy Note 8 / S8 / S8 Plus, S7 / S7 Edge and Qi-Enabled Devices",
+        "info": "这是商品详情",
+        "url": "https://www.baidu.com",
+        "color": "#FF99CC",
         "classify_id": "0",
         "price": "100"
       },
       {
         "sid": "5",
-        "title": "测试标题",
-        "img": "/img/shop/shop_0.png",
-        "describe": "测试描述",
+        "title": "Qi Wireless Charger T511 ROSE GOLD",
+        "img": [
+          "/img/shop/114300991.jpg",
+          "/img/shop/114300991.jpg",
+          "/img/shop/114300991.jpg"
+        ],
+        "describe": "CHOE-T511RD-CHOETECH Qi Certified T511 Qi Wireless Charger Pad with Anti-Slip Rubber for iPhone 8 / 8 Plus, iPhone X, Samsung Galaxy Note 8 / S8 / S8 Plus, S7 / S7 Edge and Qi-Enabled Devices",
+        "info": "这是商品详情",
+        "url": "https://www.baidu.com",
+        "color": "#FF99CC",
         "classify_id": "0",
         "price": "100"
       },
       {
         "sid": "6",
-        "title": "测试标题",
-        "img": "/img/shop/shop_0.png",
-        "describe": "测试描述",
+        "title": "Qi Wireless Charger T511 ROSE GOLD",
+        "img": [
+          "/img/shop/114300991.jpg",
+          "/img/shop/114300991.jpg",
+          "/img/shop/114300991.jpg"
+        ],
+        "describe": "CHOE-T511RD-CHOETECH Qi Certified T511 Qi Wireless Charger Pad with Anti-Slip Rubber for iPhone 8 / 8 Plus, iPhone X, Samsung Galaxy Note 8 / S8 / S8 Plus, S7 / S7 Edge and Qi-Enabled Devices",
+        "info": "这是商品详情",
+        "url": "https://www.baidu.com",
+        "color": "#FF99CC",
         "classify_id": "0",
         "price": "100"
       },
       {
         "sid": "7",
-        "title": "测试标题",
-        "img": "/img/shop/shop_0.png",
-        "describe": "测试描述",
-        "classify_id": "0",
-        "price": "100"
-      },
-      {
-        "sid": "8",
-        "title": "测试标题",
-        "img": "/img/shop/shop_0.png",
-        "describe": "测试描述",
-        "classify_id": "0",
-        "price": "100"
-      },
-      {
-        "sid": "9",
-        "title": "测试标题",
-        "img": "/img/shop/shop_0.png",
-        "describe": "测试描述",
+        "title": "Qi Wireless Charger T511 ROSE GOLD",
+        "img": [
+          "/img/shop/114300991.jpg",
+          "/img/shop/114300991.jpg",
+          "/img/shop/114300991.jpg"
+        ],
+        "describe": "CHOE-T511RD-CHOETECH Qi Certified T511 Qi Wireless Charger Pad with Anti-Slip Rubber for iPhone 8 / 8 Plus, iPhone X, Samsung Galaxy Note 8 / S8 / S8 Plus, S7 / S7 Edge and Qi-Enabled Devices",
+        "info": "这是商品详情",
+        "url": "https://www.baidu.com",
+        "color": "#FF99CC",
         "classify_id": "0",
         "price": "100"
       }

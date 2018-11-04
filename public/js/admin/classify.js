@@ -1,4 +1,35 @@
 $(function () {
+  $('.classify .classify_info .save').click(function () {
+    var formData = new FormData();
+    formData.set('title', $(this).siblings('.title').val());
+    formData.set('keywords', $(this).siblings('.keywords').val());
+    formData.set('description', $(this).siblings('.description').val());
+    formData.set('type', 'info');
+    $(this).text('保存中，请稍等。');
+    var that = $(this);
+    $.ajax({
+      url: '/api/classify',
+      type: 'POST',
+      data: formData,
+      async: false,
+      cache: false,
+      processData: false,
+      contentType: false,
+      success: function (data) {
+        if (data.code == 1) {
+          that.text('保存');
+          alert('保存成功。');
+        } else {
+          that.text('保存');
+          alert('保存失败。');
+        }
+      },
+      error: function (error) {
+        that.text('保存');
+        alert('保存失败。');
+      }
+    })
+  });
   $('.classify .classify_list').on('click', '.add', function () {
     if (!$(this).siblings('.title').val().trim()) {
       alert('标题不能为空。');
@@ -24,14 +55,14 @@ $(function () {
       processData: false,
       contentType: false,
       success: function (data) {
+        that.text('保存');
         if (data.code == 1) {
-          that.removeClass('add').addClass('save').html('保存');
+          that.removeClass('add').addClass('save');
           that.parent().removeClass('clone');
           that.siblings('.delete').show();
           that.siblings('.img')[0].src = data.data.img;
           alert('保存成功。');
         } else {
-          that.text('保存');
           alert('保存失败。');
         }
       },
@@ -66,12 +97,11 @@ $(function () {
       processData: false,
       contentType: false,
       success: function (data) {
+        that.text('保存');
         if (data.code == 1) {
-          that.text('保存');
           that.siblings('.img')[0].src = data.data.img;
           alert('保存成功。');
         } else {
-          that.text('保存');
           alert('保存失败。');
         }
       },
@@ -110,11 +140,11 @@ $(function () {
       processData: false,
       contentType: false,
       success: function (data) {
+        that.text('删除');
         if (data.code == 1) {
           that.parent().remove();
           alert('删除成功。');
         } else {
-          that.text('删除');
           alert('删除失败。');
         }
       },
@@ -168,14 +198,14 @@ $(function () {
       processData: false,
       contentType: false,
       success: function (data) {
+        that.text('保存');
         if (data.code == 1) {
-          that.removeClass('add').addClass('save').html('保存');
+          that.removeClass('add').addClass('save');
           that.parent().removeClass('clone');
           that.siblings('.delete').show();
           that.siblings('.img')[0].src = data.data.img;
           alert('保存成功。');
         } else {
-          that.text('保存');
           alert('保存失败。');
         }
       },
@@ -210,12 +240,11 @@ $(function () {
       processData: false,
       contentType: false,
       success: function (data) {
+        that.text('保存');
         if (data.code == 1) {
-          that.text('保存');
           that.siblings('.img')[0].src = data.data.img;
           alert('保存成功。');
         } else {
-          that.text('保存');
           alert('保存失败。');
         }
       },
@@ -254,11 +283,11 @@ $(function () {
       processData: false,
       contentType: false,
       success: function (data) {
+          that.text('删除');
         if (data.code == 1) {
           that.parent().remove();
           alert('删除成功。');
         } else {
-          that.text('删除');
           alert('删除失败。');
         }
       },

@@ -20,7 +20,7 @@
   <!-- banner轮播图 end -->
   <!-- products_slide商品小图 start -->
   <ul class="products_slide container">
-    <% for (let i = 0; i < index_data[0].products_slide.count; i++) { %>
+    <% for (let i = 0; i < index_data[0].products_slide.list.length; i++) { %>
     <li>
       <a href="<%= index_data[0].products_slide.list[i].url %>">
         <img src="<%= index_data[0].products_slide.list[i].img %>" alt="iphoneX">
@@ -32,7 +32,7 @@
   <!-- products_slide商品小图 end -->
   <!-- products_map商品大图 start -->
   <ul class="products_map clearfix">
-    <% for (let i = 0; i < index_data[0].products_map.count; i++) { %>
+    <% for (let i = 0; i < index_data[0].products_map.list.length; i++) { %>
     <li>
       <a href="<%= index_data[0].products_map.list[i].url %>">
         <div class="text">
@@ -55,7 +55,7 @@
       <small>Browse our most popular products</small>
     </h2>
     <ul>
-      <% for (let i = 0; i < index_data[0].products_list.count; i++) { %>
+      <% for (let i = 0; i < index_data[0].products_list.list.length; i++) { %>
       <li>
         <a href="<%= index_data[0].products_list.list[i].url %>">
           <img src="<%= index_data[0].products_list.list[i].img %>" alt="">

@@ -190,7 +190,7 @@
       <% if (shop_data[0].list[i].classify_id == classify_id) { %>
       <li>
         <a href="/product/shop_<%= shop_data[0].list[i].sid %>.html">
-          <img src="<%= shop_data[0].list[i].img %>" alt="">
+          <img src="<%= shop_data[0].list[i].img[0] %>" alt="">
           <p><%= shop_data[0].list[i].title %></p>
         </a>
       </li>

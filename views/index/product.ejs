@@ -1,0 +1,323 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <title>a</title>
+  <meta name="keywords" content="a">
+  <meta name="description" content="a">
+  <link rel="stylesheet" href="/plugin/normalize-8.0.0/normalize.min.css">
+  <link rel="stylesheet" href="https://at.alicdn.com/t/font_847183_zkr9rivaov.css">
+  <link rel="stylesheet" href="/plugin/swiper-4.4.1/css/swiper.min.css">
+  <link rel="stylesheet" href="/css/common/reset.css">
+  <style>
+    .header {
+      width: 100%;
+      position: fixed;
+      background-color: #fff;
+      z-index: 99;
+      border-bottom: 3px solid #2BA62E;
+      height: 80px;
+    }
+    .header .container {
+      position: relative;
+      display: flex;
+      align-items: center;
+      height: 100%;
+    }
+    .header .logo {
+      margin: auto 0;
+      font-size: 0;
+      background-color: #fff;
+      width: 220px;
+    }
+    .header .nav li {
+      font-size: 0;
+      position: relative;
+      font-weight: bold;
+      margin-left: 50px;
+      float: left;
+    }
+    .header .nav li a {
+      font-size: 16px;
+    }
+    .header .nav li span {
+      position: absolute;
+      left: 0;
+      bottom: -4px;
+      width: 0;
+      height: 1px;
+      transition: width 0.3s;
+      background: blue;
+    }
+    .header .nav li:hover span {
+      width: 100%;
+    }
+    .header .nav li.active span {
+      width: 100%;
+    }
+    .header .search {
+      padding: 6px;
+      padding-right: 30px;
+      border: 1px solid #333;
+      border-radius: 5px;
+      position: absolute;
+      right: 0;
+    }
+    .header .search input {
+      width: 200px;
+      height: 20px;
+    }
+    .header .search i {
+      cursor: pointer;
+      width: 20px;
+      height: 20px;
+      right: 4px;
+      top: 0;
+      bottom: 0;
+      margin: auto 0;
+      position: absolute;
+    }
+    .header_content {
+      height: 83px;
+    }
+    .products_detail {
+      margin: 20px 0 0 0;
+    }
+    .products_detail .products_left {
+      float: left;
+      width: 50%;
+    }
+    .products_detail .products_left img {
+      width: 100%;
+    }
+    .products_detail .products_right {
+      float: right;
+      width: 50%;
+      box-sizing: border-box;
+      padding: 0 50px;
+    }
+    .products_detail .products_right .title {
+      /*text-align: center;*/
+      font-size: 24px;
+      font-weight: 400;
+    }
+    .products_detail .products_right .describe {
+      font-weight: 400;
+    }
+    .products_detail .products_right .color {
+      border-radius: 3px;
+      display: inline-block;
+      background-color: <%= shop_data.color %>;
+      width: 30px;
+      height: 30px;
+    }
+  </style>
+
+
+
+  <style>
+  .pc-slide {
+  width: 500px;
+  margin: 0 auto;
+}
+
+.view .swiper-container {
+  width: 500px;
+  height: 500px;
+}
+
+.view .arrow-left {
+  background: url(https://www.swiper.com.cn/demo/pcSlide/images/feel3.png) no-repeat left top;
+  position: absolute;
+  left: 10px;
+  top: 50%;
+  margin-top: -25px;
+  width: 28px;
+  height: 51px;
+  z-index: 10;
+}
+
+.view .arrow-right {
+  background: url(https://www.swiper.com.cn/demo/pcSlide/images/feel4.png) no-repeat left bottom;
+  position: absolute;
+  right: 10px;
+  top: 50%;
+  margin-top: -25px;
+  width: 28px;
+  height: 51px;
+  z-index: 10;
+}
+
+.preview {
+  width: 100%;
+  margin-top: 10px;
+  position: relative;
+}
+
+.preview .swiper-container {
+  width: 430px;
+  height: 82px;
+  margin-left: 35px;
+}
+
+.preview .swiper-slide {
+  width: 87px;
+  height: 82px;
+  cursor:pointer;
+}
+
+.preview .slide6 {
+  width: 82px;
+}
+
+.preview .arrow-left {
+  background: url(https://www.swiper.com.cn/demo/pcSlide/images/feel3.png) no-repeat left top;
+  position: absolute;
+  left: 10px;
+  top: 50%;
+  margin-top: -9px;
+  width: 9px;
+  height: 18px;
+  z-index: 10;
+}
+
+.preview .arrow-right {
+  background: url(https://www.swiper.com.cn/demo/pcSlide/images/feel4.png) no-repeat left bottom;
+  position: absolute;
+  right: 10px;
+  top: 50%;
+  margin-top: -9px;
+  width: 9px;
+  height: 18px;
+  z-index: 10;
+}
+
+.preview img {
+  padding: 1px;
+}
+
+.preview .active-nav img {
+  padding: 0;
+  border: 1px solid #F00;
+}
+</style>
+
+</head>
+<body>
+  <!-- header头部 start -->
+  <%- include('./common/header', { data: 1}); %>
+  <!-- header头部 end -->
+  <!-- products_detail展示 start -->
+  <div class="container">
+    <div class="products_detail">
+      <div class="products_left">
+        <!-- <img src="<%= shop_data.img[0] %>" alt=""> -->
+
+
+  <div class="view">
+    <div class="swiper-container">
+      <a class="arrow-left" href="#"></a>
+      <a class="arrow-right" href="#"></a>
+      <div class="swiper-wrapper">
+        <% for (let i = 0; i < shop_data.img.length; i++) { %>
+        <div class="swiper-slide">
+          <img src="<%= shop_data.img[i] %>" alt="">
+        </div>
+        <% } %>
+      </div>
+    </div>
+  </div>
+
+  <div class="preview">
+    <a class="arrow-left" href="#"></a>
+    <a class="arrow-right" href="#"></a>
+    <div class="swiper-container">
+      <div class="swiper-wrapper">
+        <% for (let i = 0; i < shop_data.img.length; i++) { %>
+        <div class="swiper-slide <%= i == 0 ? 'active-nav' : ''  %>">
+          <img src="<%= shop_data.img[i] %>" alt="">
+        </div>
+        <% } %>
+      </div>
+    </div>
+  </div>
+
+
+
+<!--     <div class="swiper-container banner">
+      <div class="swiper-wrapper">
+        <% for (let i = 0; i < shop_data.img.length; i++) { %>
+        <div class="swiper-slide">
+            <img src="<%= shop_data.img[i] %>" alt="">
+        </div>
+        <% } %>
+      </div>
+    </div> -->
+
+      </div>
+      <div class="products_right">
+        <h1 class="title"><%= shop_data.title %></h1>
+        <p class="describe"><%= shop_data.describe %></p>
+        <p>
+          <span class="color"></span>
+          <span class="price">price：<%= shop_data.price %></span>
+        </p>
+      </div>
+    </div>
+  </div>
+  <!-- products_detail展示 end -->
+  <script src="/plugin/jquery.min.js"></script>
+  <script src="/plugin/swiper-4.4.1/js/swiper.min.js"></script>
+<script>
+var viewSwiper = new Swiper('.view .swiper-container', {
+  on:{
+    slideChangeTransitionStart: function() {
+        updateNavPosition()
+      }
+  }
+})
+
+$('.view .arrow-left,.preview .arrow-left').on('click', function(e) {
+  e.preventDefault()
+  if (viewSwiper.activeIndex == 0) {
+    viewSwiper.slideTo(viewSwiper.slides.length - 1, 1000);
+    return
+  }
+  viewSwiper.slidePrev()
+})
+$('.view .arrow-right,.preview .arrow-right').on('click', function(e) {
+  e.preventDefault()
+  if (viewSwiper.activeIndex == viewSwiper.slides.length - 1) {
+    viewSwiper.slideTo(0, 1000);
+    return
+  }
+  viewSwiper.slideNext()
+})
+
+var previewSwiper = new Swiper('.preview .swiper-container', {
+  //visibilityFullFit: true,
+  slidesPerView: 'auto',
+  allowTouchMove: false,
+  on:{
+    tap: function() {
+        viewSwiper.slideTo(previewSwiper.clickedIndex)
+    }
+  }
+})
+
+function updateNavPosition() {
+    $('.preview .active-nav').removeClass('active-nav')
+    var activeNav = $('.preview .swiper-slide').eq(viewSwiper.activeIndex).addClass('active-nav')
+    if (!activeNav.hasClass('swiper-slide-visible')) {
+      if (activeNav.index() > previewSwiper.activeIndex) {
+        var thumbsPerNav = Math.floor(previewSwiper.width / activeNav.width()) - 1
+        previewSwiper.slideTo(activeNav.index() - thumbsPerNav)
+      } else {
+        previewSwiper.slideTo(activeNav.index())
+      }
+    }
+  }
+</script>
+
+</body>
+</html>

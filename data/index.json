@@ -1,121 +1,53 @@
 [
   {
     "title": "首页",
-    "keywords": "",
-    "description": "",
+    "keywords": "这是首页关键词",
+    "description": "这是首页描述",
     "banner": {
-      "count": "10",
       "list": [
         {
-          "img": "/img/index/banner_0.png",
-          "url": "/admin/index.html"
-        },
-        {
-          "img": "/img/index/banner_1.png",
-          "url": "/admin/index.html"
-        },
-        {
-          "img": "/img/index/banner_2.png",
-          "url": "/admin/index.html"
-        },
-        {
-          "img": "/img/index/banner_3.png",
-          "url": "/admin/index.html"
-        },
-        {
-          "img": "/img/index/banner_4.png",
-          "url": "/admin/index.html"
-        },
-        {
-          "img": "/img/index/banner_5.png",
-          "url": "/admin/index.html"
-        },
-        {
-          "img": "/img/index/banner_6.png",
-          "url": "/admin/index.html"
-        },
-        {
-          "img": "/img/index/banner_7.png",
-          "url": "/admin/index.html"
-        },
-        {
-          "img": "/img/index/banner_8.png",
-          "url": "/admin/index.html"
-        },
-        {
-          "img": "/img/index/banner_9.png",
+          "id": "0",
+          "img": "/img/index/upload_2766706ae1cbae349122757cf6a85665.png",
           "url": "/admin/index.html"
         }
       ]
     },
     "products_slide": {
-      "count": "8",
       "list": [
         {
-          "img": "/img/index/products_slide_0.png",
-          "url": "/admin/index.html",
-          "title": "iPhone X"
-        },
-        {
-          "img": "/img/index/products_slide_1.png",
-          "url": "/admin/index.html",
-          "title": "iPhone X"
-        },
-        {
-          "img": "/img/index/products_slide_2.png",
-          "url": "/admin/index.html",
-          "title": "iPhone X"
-        },
-        {
-          "img": "/img/index/products_slide_3.png",
-          "url": "/admin/index.html",
-          "title": "iPhone X"
-        },
-        {
-          "img": "/img/index/products_slide_4.png",
-          "url": "/admin/index.html",
-          "title": "iPhone X"
-        },
-        {
-          "img": "/img/index/products_slide_5.png",
-          "url": "/admin/index.html",
-          "title": "iPhone X"
-        },
-        {
-          "img": "/img/index/products_slide_6.png",
-          "url": "/admin/index.html",
-          "title": "iPhone X"
-        },
-        {
-          "img": "/img/index/products_slide_7.png",
+          "id": "0",
+          "img": "/img/index/upload_48c5afd83a713235822f3ccea29b1672.png",
           "url": "/admin/index.html",
           "title": "iPhone X"
         }
       ]
     },
     "products_map": {
-      "count": "4",
       "list": [
         {
-          "img": "/img/index/products_map_0.png",
+          "id": "0",
+          "img": "/img/index/upload_525f49772e8de04469842a88ab22aaed.png",
           "url": "/admin/index.html",
           "title": "Power",
           "description": "Power introduce"
         },
         {
-          "img": "/img/index/products_map_1.png",
+          "id": "1",
+          "img": "/img/index/upload_afbf497547419c9c96286426c7199372.png",
           "url": "/admin/index.html",
           "title": "Power",
           "description": "Power introduce"
         },
         {
-          "img": "/img/index/products_map_2.png",
+          "id": "2",
+          "img": "/img/index/upload_bd7393e352e9b696ab25c9a6021f44a3.png",
           "url": "/admin/index.html",
           "title": "Power",
           "description": "Power introduce"
         },
         {
-          "img": "/img/index/products_map_3.png",
+          "id": "3",
+          "img": "/img/index/upload_bfbccc3b35994a0835da0957430b5882.png",
           "url": "/admin/index.html",
           "title": "Power",
           "description": "Power introduce"
@@ -123,25 +55,28 @@
       ]
     },
     "products_list": {
-      "count": "4",
       "list": [
         {
-          "img": "/img/index/products_list_0.png",
+          "id": "0",
+          "img": "/img/index/upload_ae48c805b885dced4b48c9c3f884d957.png",
           "url": "/admin/index.html",
           "description": "CHOETECH 2-in-1 Wireless Charger Power Bank 10000mAh"
         },
         {
-          "img": "/img/index/products_list_1.png",
+          "id": "1",
+          "img": "/img/index/upload_aacd1c7ebb0ecde79badb17cdb62b52a.png",
           "url": "/admin/index.html",
           "description": "CHOETECH 2-in-1 Wireless Charger Power Bank 10000mAh"
         },
         {
-          "img": "/img/index/products_list_2.png",
+          "id": "2",
+          "img": "/img/index/upload_755721f41c16ae192951a232bcb21679.png",
           "url": "/admin/index.html",
           "description": "CHOETECH 2-in-1 Wireless Charger Power Bank 10000mAh"
         },
         {
-          "img": "/img/index/products_list_3.png",
+          "id": "3",
+          "img": "/img/index/upload_1e5e8695aaa049159d5b915ffe3688ee.png",
           "url": "/admin/index.html",
           "description": "CHOETECH 2-in-1 Wireless Charger Power Bank 10000mAh"
         }

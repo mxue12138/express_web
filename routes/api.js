@@ -40,6 +40,198 @@ router.post('/upload', function(req, res) {
   });
 });
 
+router.post('/api/index', function(req, res) {
+  var form = new formidable.IncomingForm();
+  form.uploadDir = rootDir + '/public/img/index/';
+  form.keepExtensions = true;
+  form.parse(req, function(err, fields, files){
+    var indexData = getData('index');
+    var bannerList = indexData[0].banner.list;
+    var productsSlideList = indexData[0].products_slide.list;
+    var productsMapList = indexData[0].products_map.list;
+    var productsListList = indexData[0].products_list.list;
+    if (fields.type == 'info') {
+      indexData[0].title = fields.title;
+      indexData[0].keywords = fields.keywords;
+      indexData[0].description = fields.description;
+      setData('index', indexData);
+      res.json({
+        code: 1,
+        data: {
+          title: fields.title,
+          keywords: fields.keywords,
+          description: fields.description
+        }
+      });
+    } else if (fields.type == 'banner_add') {
+      var filePath = files.file.path.split(path.sep).join('/');
+      var img = filePath.slice(filePath.lastIndexOf('/') + 1);
+      bannerList.push({
+        id: fields.id,
+        url: fields.url,
+        img: '/img/index/' + img
+      });
+      setData('index', indexData);
+      res.json({
+        code: 1,
+        data: bannerList[bannerList.length - 1]
+      });
+    } else if (fields.type == 'banner_update') {
+      if (files.file) {
+        var index = null;
+        var filePath = files.file.path.split(path.sep).join('/');
+        var img = filePath.slice(filePath.lastIndexOf('/') + 1);
+      }
+      bannerList.forEach(function (val, i) {
+        if(val.id == fields.id) {
+          index = i;
+          bannerList[i].url = fields.url;
+          if (files.file) {
+            fs.unlink(rootDir + '/public/img/index/' + bannerList[i].img.slice(bannerList[i].img.lastIndexOf('/') + 1), function (error) {
+              if (error) {
+                console.log(error);
+              }
+            });
+            bannerList[i].img = '/img/index/' + img;
+          }
+        }
+      });
+      setData('index', indexData);
+      res.json({
+        code: 1,
+        data: bannerList[index]
+      });
+    } else if (fields.type == 'banner_delete') {
+      bannerList.forEach(function (val, i) {
+        if(val.id == fields.id) {
+          fs.unlink(rootDir + '/public/img/index/' + bannerList[i].img.slice(bannerList[i].img.lastIndexOf('/') + 1), function (error) {
+            if (error) {
+              console.log(error);
+            }
+          });
+          bannerList.splice(i, 1);
+        }
+      });
+      setData('index', indexData);
+      res.json({
+        code: 1
+      });
+    } else if (fields.type == 'products_slide_add') {
+      var filePath = files.file.path.split(path.sep).join('/');
+      var img = filePath.slice(filePath.lastIndexOf('/') + 1);
+      productsSlideList.push({
+        id: fields.id,
+        url: fields.url,
+        title: fields.title,
+        img: '/img/index/' + img
+      });
+      setData('index', indexData);
+      res.json({
+        code: 1,
+        data: productsSlideList[productsSlideList.length - 1]
+      });
+    } else if (fields.type == 'products_slide_update') {
+      if (files.file) {
+        var index = null;
+        var filePath = files.file.path.split(path.sep).join('/');
+        var img = filePath.slice(filePath.lastIndexOf('/') + 1);
+      }
+      productsSlideList.forEach(function (val, i) {
+        if(val.id == fields.id) {
+          index = i;
+          productsSlideList[i].url = fields.url;
+          productsSlideList[i].title = fields.title;
+          if (files.file) {
+            fs.unlink(rootDir + '/public/img/index/' + productsSlideList[i].img.slice(productsSlideList[i].img.lastIndexOf('/') + 1), function (error) {
+              if (error) {
+                console.log(error);
+              }
+            });
+            productsSlideList[i].img = '/img/index/' + img;
+          }
+        }
+      });
+      setData('index', indexData);
+      res.json({
+        code: 1,
+        data: productsSlideList[index]
+      });
+    } else if (fields.type == 'products_slide_delete') {
+      productsSlideList.forEach(function (val, i) {
+        if(val.id == fields.id) {
+          fs.unlink(rootDir + '/public/img/index/' + productsSlideList[i].img.slice(productsSlideList[i].img.lastIndexOf('/') + 1), function (error) {
+            if (error) {
+              console.log(error);
+            }
+          });
+          productsSlideList.splice(i, 1);
+        }
+      });
+      setData('index', indexData);
+      res.json({
+        code: 1
+      });
+    } else if (fields.type == 'products_map_update') {
+      if (files.file) {
+        var index = null;
+        var filePath = files.file.path.split(path.sep).join('/');
+        var img = filePath.slice(filePath.lastIndexOf('/') + 1);
+      }
+      productsMapList.forEach(function (val, i) {
+        if(val.id == fields.id) {
+          index = i;
+          productsMapList[i].url = fields.url;
+          productsMapList[i].title = fields.title;
+          productsMapList[i].description = fields.description;
+          if (files.file) {
+            fs.unlink(rootDir + '/public/img/index/' + productsMapList[i].img.slice(productsMapList[i].img.lastIndexOf('/') + 1), function (error) {
+              if (error) {
+                console.log(error);
+              }
+            });
+            productsMapList[i].img = '/img/index/' + img;
+          }
+        }
+      });
+      setData('index', indexData);
+      res.json({
+        code: 1,
+        data: productsMapList[index]
+      });
+    } else if (fields.type == 'products_list_update') {
+      if (files.file) {
+        var index = null;
+        var filePath = files.file.path.split(path.sep).join('/');
+        var img = filePath.slice(filePath.lastIndexOf('/') + 1);
+      }
+      productsMapList.forEach(function (val, i) {
+        if(val.id == fields.id) {
+          index = i;
+          productsListList[i].url = fields.url;
+          productsListList[i].description = fields.description;
+          if (files.file) {
+            fs.unlink(rootDir + '/public/img/index/' + productsListList[i].img.slice(productsMapList[i].img.lastIndexOf('/') + 1), function (error) {
+              if (error) {
+                console.log(error);
+              }
+            });
+            productsListList[i].img = '/img/index/' + img;
+          }
+        }
+      });
+      setData('index', indexData);
+      res.json({
+        code: 1,
+        data: productsListList[index]
+      });
+    } else {
+      res.json({
+        code: 0
+      });
+    }
+  })
+});
+
 router.post('/api/classify', function(req, res) {
   var form = new formidable.IncomingForm();
   form.uploadDir = rootDir + '/public/img/index/';

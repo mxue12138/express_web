@@ -17,7 +17,16 @@ router.get('/classify.html', function(req, res) {
 });
 
 router.get('/product/shop_:sid.html', function(req, res) {
-  res.send(req.params.sid);
+  var shopData = getData('shop');
+  var shop_data = null;
+  shopData[0].list.forEach(function (val, i) {
+    if (req.params.sid == val.sid) {
+      shop_data = val;
+    }
+  });
+  res.render('index/product', {
+    shop_data: shop_data
+  });
 });
 
 module.exports = router;

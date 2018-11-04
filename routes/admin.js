@@ -42,7 +42,7 @@ router.get('/admin/webinfo.html', function(req, res) {
 router.get('/admin/indexinfo.html', function(req, res) {
   res.render('admin/index', {
     title: '首页信息配置',
-    content: 'indexinfo',
+    content: 'indexinfo2',
     data: getData('index')[0]
   });
 });

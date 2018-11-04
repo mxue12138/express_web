@@ -4,35 +4,19 @@
         <img src="/img/logo.jpg" alt="logo">
       </a>
       <ul class="nav">
-        <% if (data == 0) { %>
-        <li class="active">
-        <% } else { %>
-        <li>
-        <% } %>
+        <li <%= data == 0 ? 'class=active' : '' %>>
           <a href="/index.html">Home</a>
           <span></span>
         </li>
-        <% if (data == 1) { %>
-        <li class="active">
-        <% } else { %>
-        <li>
-        <% } %>
+        <li <%= data == 1 ? 'class=active' : '' %>>
           <a href="/classify.html">Products</a>
           <span></span>
         </li>
-        <% if (data == 2) { %>
-        <li class="active">
-        <% } else { %>
-        <li>
-        <% } %>
+        <li <%= data == 2 ? 'class=active' : '' %>>
           <a href="/">Blog</a>
           <span></span>
         </li>
-        <% if (data == 3) { %>
-        <li class="active">
-        <% } else { %>
-        <li>
-        <% } %>
+        <li <%= data == 3 ? 'class=active' : '' %>>
           <a href="/">Support</a>
           <span></span>
         </li>

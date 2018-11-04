@@ -1,0 +1,504 @@
+<div class="index">
+  <div class="index_info">
+    <fieldset>
+      <legend>首页SEO设置</legend>
+        <input type="text" class="title" value="<%= data.title %>">
+        <input type="text" class="keywords" value="<%= data.keywords %>">
+        <input type="text" class="description" value="<%= data.description %>">
+        <button class="save">保存</button>
+    </fieldset>
+  </div>
+  <div class="index_banner">
+    <fieldset>
+      <legend>首页轮播图</legend>
+      <% for (let i = 0; i < data.banner.list.length; i++) { %>
+        <p>
+          <input type="text" readonly class="id" value="<%= data.banner.list[i].id %>">
+          <img src="<%= data.banner.list[i].img %>" alt="" class="img">
+          <input type="file" class="file">
+          <input type="text" class="url" value="<%= data.banner.list[i].url %>">
+          <button class="save">保存</button>
+          <button class="delete">删除</button>
+        </p>
+      <% } %>
+      <button class="addBanner">添加轮播图</button>
+    </fieldset>
+  </div>
+  <div class="index_products_slide">
+    <fieldset>
+      <legend>首页商品小图</legend>
+      <% for (let i = 0; i < data.products_slide.list.length; i++) { %>
+        <p>
+          <input type="text" readonly class="id" value="<%= data.products_slide.list[i].id %>">
+          <img src="<%= data.products_slide.list[i].img %>" alt="" class="img">
+          <input type="file" class="file">
+          <input type="text" class="title" value="<%= data.products_slide.list[i].title %>">
+          <input type="text" class="url" value="<%= data.products_slide.list[i].url %>">
+          <button class="save">保存</button>
+          <button class="delete">删除</button>
+        </p>
+      <% } %>
+      <button class="addProductsSlide">添加首页商品小图</button>
+    </fieldset>
+  </div>
+  <div class="index_products_map">
+    <fieldset>
+      <legend>首页商品大图</legend>
+      <% for (let i = 0; i < data.products_map.list.length; i++) { %>
+        <p>
+          <input type="text" readonly class="id" value="<%= data.products_map.list[i].id %>">
+          <img src="<%= data.products_map.list[i].img %>" alt="" class="img">
+          <input type="file" class="file">
+          <input type="text" class="title" value="<%= data.products_map.list[i].title %>">
+          <input type="text" class="description" value="<%= data.products_map.list[i].description %>">
+          <input type="text" class="url" value="<%= data.products_map.list[i].url %>">
+          <button class="save">保存</button>
+        </p>
+      <% } %>
+    </fieldset>
+  </div>
+  <div class="index_products_list">
+    <fieldset>
+      <legend>首页商品列表</legend>
+      <% for (let i = 0; i < data.products_list.list.length; i++) { %>
+        <p>
+          <input type="text" class="id" value="<%= data.products_list.list[i].id %>">
+          <img src="<%= data.products_list.list[i].img %>" alt="" class="img">
+          <input type="file" class="file">
+          <input type="text" class="description" value="<%= data.products_list.list[i].description %>">
+          <input type="text" class="url" value="<%= data.products_list.list[i].url %>">
+          <button class="save">保存</button>
+        </p>
+      <% } %>
+    </fieldset>
+  </div>
+</div>
+<script>
+$(function () {
+  $('.index .index_info .save').click(function () {
+    var formData = new FormData();
+    formData.set('title', $(this).siblings('.title').val());
+    formData.set('keywords', $(this).siblings('.keywords').val());
+    formData.set('description', $(this).siblings('.description').val());
+    formData.set('type', 'info');
+    $(this).text('保存中，请稍等。');
+    var that = $(this);
+    $.ajax({
+      url: '/api/index',
+      type: 'POST',
+      data: formData,
+      async: false,
+      cache: false,
+      processData: false,
+      contentType: false,
+      success: function (data) {
+        if (data.code == 1) {
+          that.text('保存');
+          alert('保存成功。');
+        } else {
+          that.text('保存');
+          alert('保存失败。');
+        }
+      },
+      error: function (error) {
+        that.text('保存');
+        alert('保存失败。');
+      }
+    })
+  });
+  $('.index .index_banner').on('click', '.add', function () {
+    if (!$(this).siblings('.url').val().trim()) {
+      alert('url不能为空。');
+      return;
+    }
+    if (!$(this).siblings('.file')[0].files[0]) {
+      alert('图片不能为空。');
+      return;
+    }
+    var formData = new FormData();
+    formData.set('file', $(this).siblings('.file')[0].files[0]);
+    formData.set('id', $(this).siblings('.id').val());
+    formData.set('url', $(this).siblings('.url').val());
+    formData.set('type', 'banner_add');
+    $(this).text('保存中，请稍等。');
+    var that = $(this);
+    $.ajax({
+      url: '/api/index',
+      type: 'POST',
+      data: formData,
+      async: false,
+      cache: false,
+      processData: false,
+      contentType: false,
+      success: function (data) {
+        that.text('保存');
+        if (data.code == 1) {
+          that.removeClass('add').addClass('save');
+          that.parent().removeClass('clone');
+          that.siblings('.delete').show();
+          that.siblings('.img')[0].src = data.data.img;
+          alert('保存成功。');
+        } else {
+          alert('保存失败。');
+        }
+      },
+      error: function (error) {
+        that.text('保存');
+        alert('保存失败。');
+      }
+    })
+  });
+  $('.index .index_banner').on('click', '.save', function () {
+    if (!$(this).siblings('.url').val().trim()) {
+      alert('url不能为空。');
+      return;
+    }
+    var formData = new FormData();
+    if ($(this).siblings('.file')[0].files[0]) {
+      formData.set('file', $(this).siblings('.file')[0].files[0]);
+    } else {
+      formData.delete('file');
+    }
+    formData.set('file', $(this).siblings('.file')[0].files[0]);
+    formData.set('id', $(this).siblings('.id').val());
+    formData.set('url', $(this).siblings('.url').val());
+    formData.set('type', 'banner_update');
+    $(this).text('保存中，请稍等。');
+    var that = $(this);
+    $.ajax({
+      url: '/api/index',
+      type: 'POST',
+      data: formData,
+      async: false,
+      cache: false,
+      processData: false,
+      contentType: false,
+      success: function (data) {
+        that.text('保存');
+        if (data.code == 1) {
+          that.siblings('.img')[0].src = data.data.img;
+          alert('保存成功。');
+        } else {
+          alert('保存失败。');
+        }
+      },
+      error: function (error) {
+        that.text('保存');
+        alert('保存失败。');
+      }
+    })
+  });
+  $('.index .index_banner').on('click', '.delete', function () {
+    if ($(this).parent().siblings('p').length == 0) {
+      alert('请保留一个轮播图。');
+      return;
+    } else {
+      var deleteIndex = 0;
+      for (var i = 0; i < $(this).parent().siblings('p').length; i++) {
+        if (!$(this).parent().siblings('p').eq(i).hasClass('clone')) {
+          deleteIndex += 1;
+        }
+      }
+      if (deleteIndex == 0) {
+        alert('请保留一个轮播图。');
+        return;
+      }
+    }
+    var formData = new FormData();
+    formData.set('type', 'banner_delete');
+    formData.set('id', $(this).siblings('.id').val());
+    var that = $(this);
+    $.ajax({
+      url: '/api/index',
+      type: 'POST',
+      data: formData,
+      async: false,
+      cache: false,
+      processData: false,
+      contentType: false,
+      success: function (data) {
+        that.text('删除');
+        if (data.code == 1) {
+          that.parent().remove();
+          alert('删除成功。');
+        } else {
+          alert('删除失败。');
+        }
+      },
+      error: function (data) {
+        that.text('删除');
+        alert('删除失败。');
+      },
+    })
+  });
+  $('.index .index_banner .addBanner').click(function () {
+    if ($(this).siblings('p').length == 10) {
+      alert('最多支持添加十条轮播图。');
+      return;
+    }
+    if ($(this).siblings('p').hasClass('clone')) {
+      alert('请先保存上一条数据。');
+      return;
+    }
+    var clone = $(this).siblings('p').last().clone();
+    $(clone).addClass('clone');
+    $(clone).children('.id').val(Number($(clone).children('.id').val()) + 1);
+    $(clone).children('.img')[0].src = '';
+    $(clone).children('.file').val('');
+    $(clone).children('.url').val('');
+    $(clone).children('.save').removeClass('save').addClass('add').html('保存');
+    $(clone).children('.delete').hide();
+    $(this).siblings('p').last().after(clone);
+  });
+  $('.index .index_products_slide').on('click', '.add', function () {
+    if (!$(this).siblings('.url').val().trim()) {
+      alert('url不能为空。');
+      return;
+    }
+    if (!$(this).siblings('.title').val().trim()) {
+      alert('标题不能为空。');
+      return;
+    }
+    if (!$(this).siblings('.file')[0].files[0]) {
+      alert('图片不能为空。');
+      return;
+    }
+    var formData = new FormData();
+    formData.set('file', $(this).siblings('.file')[0].files[0]);
+    formData.set('id', $(this).siblings('.id').val());
+    formData.set('title', $(this).siblings('.url').val());
+    formData.set('url', $(this).siblings('.url').val());
+    formData.set('type', 'banner_add');
+    $(this).text('保存中，请稍等。');
+    var that = $(this);
+    $.ajax({
+      url: '/api/index',
+      type: 'POST',
+      data: formData,
+      async: false,
+      cache: false,
+      processData: false,
+      contentType: false,
+      success: function (data) {
+        that.text('保存');
+        if (data.code == 1) {
+          that.removeClass('add').addClass('save');
+          that.parent().removeClass('clone');
+          that.siblings('.delete').show();
+          that.siblings('.img')[0].src = data.data.img;
+          alert('保存成功。');
+        } else {
+          alert('保存失败。');
+        }
+      },
+      error: function (error) {
+        that.text('保存');
+        alert('保存失败。');
+      }
+    })
+  });
+  $('.index .index_products_slide').on('click', '.save', function () {
+    if (!$(this).siblings('.url').val().trim()) {
+      alert('url不能为空。');
+      return;
+    }
+    if (!$(this).siblings('.title').val().trim()) {
+      alert('标题不能为空。');
+      return;
+    }
+    var formData = new FormData();
+    if ($(this).siblings('.file')[0].files[0]) {
+      formData.set('file', $(this).siblings('.file')[0].files[0]);
+    } else {
+      formData.delete('file');
+    }
+    formData.set('file', $(this).siblings('.file')[0].files[0]);
+    formData.set('id', $(this).siblings('.id').val());
+    formData.set('url', $(this).siblings('.url').val());
+    formData.set('title', $(this).siblings('.title').val());
+    formData.set('type', 'products_slide_update');
+    $(this).text('保存中，请稍等。');
+    var that = $(this);
+    $.ajax({
+      url: '/api/index',
+      type: 'POST',
+      data: formData,
+      async: false,
+      cache: false,
+      processData: false,
+      contentType: false,
+      success: function (data) {
+        that.text('保存');
+        if (data.code == 1) {
+          that.siblings('.img')[0].src = data.data.img;
+          alert('保存成功。');
+        } else {
+          alert('保存失败。');
+        }
+      },
+      error: function (error) {
+        that.text('保存');
+        alert('保存失败。');
+      }
+    })
+  });
+  $('.index .index_products_slide').on('click', '.delete', function () {
+    if ($(this).parent().siblings('p').length == 0) {
+      alert('请保留一个首页商品小图。');
+      return;
+    } else {
+      var deleteIndex = 0;
+      for (var i = 0; i < $(this).parent().siblings('p').length; i++) {
+        if (!$(this).parent().siblings('p').eq(i).hasClass('clone')) {
+          deleteIndex += 1;
+        }
+      }
+      if (deleteIndex == 0) {
+        alert('请保留一个首页商品小图。');
+        return;
+      }
+    }
+    var formData = new FormData();
+    formData.set('type', 'products_slide_delete');
+    formData.set('id', $(this).siblings('.id').val());
+    var that = $(this);
+    $.ajax({
+      url: '/api/index',
+      type: 'POST',
+      data: formData,
+      async: false,
+      cache: false,
+      processData: false,
+      contentType: false,
+      success: function (data) {
+        that.text('删除');
+        if (data.code == 1) {
+          that.parent().remove();
+          alert('删除成功。');
+        } else {
+          alert('删除失败。');
+        }
+      },
+      error: function (data) {
+        that.text('删除');
+        alert('删除失败。');
+      },
+    })
+  });
+  $('.index .index_products_slide .addProductsSlide').click(function () {
+    if ($(this).siblings('p').length == 8) {
+      alert('最多支持添加八条商品小图。');
+      return;
+    }
+    if ($(this).siblings('p').hasClass('clone')) {
+      alert('请先保存上一条数据。');
+      return;
+    }
+    var clone = $(this).siblings('p').last().clone();
+    $(clone).addClass('clone');
+    $(clone).children('.id').val(Number($(clone).children('.id').val()) + 1);
+    $(clone).children('.img')[0].src = '';
+    $(clone).children('.file').val('');
+    $(clone).children('.url').val('');
+    $(clone).children('.title').val('');
+    $(clone).children('.save').removeClass('save').addClass('add').html('保存');
+    $(clone).children('.delete').hide();
+    $(this).siblings('p').last().after(clone);
+  });
+  $('.index .index_products_map').on('click', '.save', function () {
+    if (!$(this).siblings('.url').val().trim()) {
+      alert('url不能为空。');
+      return;
+    }
+    if (!$(this).siblings('.title').val().trim()) {
+      alert('标题不能为空。');
+      return;
+    }
+    if (!$(this).siblings('.description').val().trim()) {
+      alert('描述不能为空。');
+      return;
+    }
+    var formData = new FormData();
+    if ($(this).siblings('.file')[0].files[0]) {
+      formData.set('file', $(this).siblings('.file')[0].files[0]);
+    } else {
+      formData.delete('file');
+    }
+    formData.set('file', $(this).siblings('.file')[0].files[0]);
+    formData.set('id', $(this).siblings('.id').val());
+    formData.set('url', $(this).siblings('.url').val());
+    formData.set('title', $(this).siblings('.title').val());
+    formData.set('description', $(this).siblings('.description').val());
+    formData.set('type', 'products_map_update');
+    $(this).text('保存中，请稍等。');
+    var that = $(this);
+    $.ajax({
+      url: '/api/index',
+      type: 'POST',
+      data: formData,
+      async: false,
+      cache: false,
+      processData: false,
+      contentType: false,
+      success: function (data) {
+        that.text('保存');
+        if (data.code == 1) {
+          that.siblings('.img')[0].src = data.data.img;
+          alert('保存成功。');
+        } else {
+          alert('保存失败。');
+        }
+      },
+      error: function (error) {
+        that.text('保存');
+        alert('保存失败。');
+      }
+    })
+  });
+  $('.index .index_products_list').on('click', '.save', function () {
+    if (!$(this).siblings('.url').val().trim()) {
+      alert('url不能为空。');
+      return;
+    }
+    if (!$(this).siblings('.description').val().trim()) {
+      alert('描述不能为空。');
+      return;
+    }
+    var formData = new FormData();
+    if ($(this).siblings('.file')[0].files[0]) {
+      formData.set('file', $(this).siblings('.file')[0].files[0]);
+    } else {
+      formData.delete('file');
+    }
+    formData.set('file', $(this).siblings('.file')[0].files[0]);
+    formData.set('id', $(this).siblings('.id').val());
+    formData.set('url', $(this).siblings('.url').val());
+    formData.set('description', $(this).siblings('.description').val());
+    formData.set('type', 'products_list_update');
+    $(this).text('保存中，请稍等。');
+    var that = $(this);
+    $.ajax({
+      url: '/api/index',
+      type: 'POST',
+      data: formData,
+      async: false,
+      cache: false,
+      processData: false,
+      contentType: false,
+      success: function (data) {
+        that.text('保存');
+        if (data.code == 1) {
+          that.siblings('.img')[0].src = data.data.img;
+          alert('保存成功。');
+        } else {
+          alert('保存失败。');
+        }
+      },
+      error: function (error) {
+        that.text('保存');
+        alert('保存失败。');
+      }
+    })
+  });
+})
+</script>
